@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Medley Building</title>
+    <link rel="stylesheet" href="./mfjohnmedleymicro.css">
+    <script>
+        function thanks() {             // function to thank users for their comment
+            alert ('Thanks!!')
+            userComment1.value = ""      // resets the text box after the comment is submitted
+            userComment2.value = ""
+        }
+    </script>
+</head>
+<body>
+    <h1>John Medley Building</h1>
+    <h2>Microwave #1: East Tower, Lvl 2</h2>
+<div class="container" name="microwave1">       <!-- the class is given to apply flex, in order to set the sections horizontally next to each other -->
+    <section>
+        <figure>
+            <img src="assets/John Medley Building (Bldg. 191), East Tower, Level 2.jpeg" width="84%">
+        </figure>
+        <figcaption>
+            Photo of Microwave by Max Finch
+        </figcaption>
+    </section>
+
+    <section>
+        <h3>Overall Rating: 4/10</h3>
+        <table class="container">
+            <tr>
+                <th>Category</th>
+                <th>Rating</th>
+            </tr>
+            <tr>
+                <th>Environment</th>
+                <td>3/10</td>
+            </tr>
+            <tr>
+                <th>Accessibility</th>
+                <td>3/10</td>
+            </tr>
+            <tr>
+                <th>Functionality</th>
+                <td>6/10</td>
+            </tr>
+            <tr>
+                <th>Facilities</th>
+                <td>5/10</td>
+            </tr>
+        </table>
+        <h3>Directions</h3>
+        <p>Under the welcome sign as you enter the university, turn right and head into the East Tower of the John Medley Building. This microwave can be found on the second floor.</p>
+    </section>
+
+    <section>
+        <h3>Comment from the Authors</h3>
+        <p>This microwave is less than desirable than most, its main limitation being the restrictive area surrounding it, giving it its poor environment and accessibility ratings. It does however make up for these shortcomings in its functionality and nearby facilities. It's a fairly modern design, so easy to use, and the room has a sink as well as a fridge, so a very versatile space.</p>
+        <h3>Leave your comment!</h3>
+        <textarea id="userComment1" name="userComment1" cols="58" rows="5" class="container"></textarea>      <!-- the id and names are given to allow easier identification of the content when we recieve it, and to allow the function to remove its content. -->
+        <br>
+        <button onclick="thanks()">Submit</button>
+    </section>
+</div>
+
+<h2>Microwave #2: West Tower</h2>
+
+<div class="container" name="microwave2">
+    <section>
+        <figure>
+            <img src="assets/John Medley Building (Bldg. 191), East Tower, Level 2.jpeg" alt="Photo of Microwave by Max Finch" width="84%">
+        </figure>
+         <figcaption>
+            Photo of Microwave by Max Finch (placeholder)
+        </figcaption>
+    </section>
+
+    <section>
+        <h3>Overall Rating: __/10</h3>
+        <table class="container">
+            <tr>
+                <th>Category</th>
+                <th>Rating</th>
+            </tr>
+            <tr>
+                <th>Environment</th>
+                <td>__/10</td>
+            </tr>
+            <tr>
+                <th>Accessibility</th>
+                <td>__/10</td>
+            </tr>
+            <tr>
+                <th>Functionality</th>
+                <td>__/10</td>
+            </tr>
+            <tr>
+                <th>Facilities</th>
+                <td>__/10</td>
+            </tr>
+        </table>
+        <h3>Directions</h3>
+        <p>Directions</p>
+    </section>
+
+    <section>
+        <h3>Comment from the Authors</h3>
+        <p>Comment</p>
+        <h3>Leave your comment!</h3>
+        <textarea id="userComment2" name="userComment2" cols="58" rows="5" class="container"></textarea>
+        <br>
+        <button onclick="thanks()">Submit</button>
+    </section>
+</div>
+
+<footer>
+<h4>Return to <a href="index.html" class="link" target="_blank">home page</a></h4>
+</footer>
+<p class="copyright">MicroMelb &#169; 2026</p>
+<p>Word count: 174</p>
+</body>
+</html>
