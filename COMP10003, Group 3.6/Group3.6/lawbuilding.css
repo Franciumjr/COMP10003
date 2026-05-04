@@ -1,38 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-    h1{
+
+h1 {
     font-family: "Fraunces", serif;
     font-weight: 600;
 }
+
 h1 {
     font-size: 44px;
     background: none;
     margin-bottom: 1rem;
 }
+
 h2 {
     font-family: "Source Sans 3", sans-serif;
     font-size: 36px;
     margin-bottom: 1rem;
     font-weight: 600;
 }
+
 p {
     font-family: "Source Sans 3", sans-serif;
     font-weight: 400;
     font-size: larger;
 }
+
 a {
 
     color: black;
     font-size: 22px;
     text-decoration: none;
 }
+
 header {
-    
+
     margin-bottom: 0;
     color: white;
     background-color: #000F46;
@@ -40,47 +46,51 @@ header {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    padding: .5rem; 
+    padding: .5rem;
     border-bottom: solid 1.5px #212e5d;
+
     p {
         font-weight: 300;
     }
 }
+
 main {
     display: flex;
     flex-direction: column;
-     .container {
+
+    .container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-     }
-    
-    
+    }
+
+
 
 }
-.wrapper {
-        display: flex;
-         flex-direction: row;
-         justify-content: center;
-         align-items: center;
-         gap: 10vw;
 
-    
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+
+
 }
 
 .title {
-        color: black    ;
-        padding: 1rem;
-        text-align: center;
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        align-items: center;
-        animation-name: slideUpAnimation;
+    color: black;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    animation-name: slideUpAnimation;
     animation-duration: 0.7s;
     animation-delay: 0.4s;
-    }
+}
 
 
 .img-wrapper {
@@ -88,26 +98,82 @@ main {
     animation-duration: 0.7s;
     animation-delay: 0.4s;
 }
+
 .cards-wrapper {
-        display: flex;
-         gap: 20px;
-         padding: 8rem 4rem;
-         background-color: rgb(242, 242, 242);
-         border: 1px solid #c0c0c0;
-         border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    padding: 8rem 4rem;
+    background-color: rgb(242, 242, 242);
+    border: 1px solid #c0c0c0;
+    border-radius: 8px;
 }
-.card-1, .card-2, .card3 {
+
+.card-1,
+.card-2,
+.card3 {
     animation-name: slideUpAnimation;
     animation-duration: 0.7s;
     animation-delay: 0.6s;
-    
+
 }
+
+.carousel {
+    font-family: "Source Sans 3", "sans serif";
+    border: 5px solid red;
+    width: 90%;
+    display: flex;
+
+    .carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 1em;
+        overflow-x: auto;
+        animation: carouselSlide 5s infinite linear;
+
+        .card {
+            flex: 0 0 5em;
+            height: 5em;
+            padding: 1em;
+            border-radius: .2em;
+            background-color: rgb(208, 231, 255);
+            border: 0.5px solid rgb(159, 159, 255);
+        }
+
+    }
+}
+
+
 
 iframe {
     margin-top: 50vh;
 }
+
 /** Animation**/
 @keyframes slideUpAnimation {
-  0% { transform: translateY(100px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes carouselSlide {
+    from {
+        translate: 0%;
+    }
+
+    to {
+        translate: 100%
+    }
+
 }
