@@ -4,6 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -31,8 +32,8 @@ p {
 }
 
 a {
-
-    color: black;
+    justify-content: start;
+    color: white;
     font-size: 22px;
     text-decoration: none;
 }
@@ -45,12 +46,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 5rem;
     padding: .5rem;
-    border-bottom: solid 1.5px #212e5d;
+    border-bottom: 3px solid #ABC1A7;
 
     p {
         font-weight: 300;
+        color: white;
     }
 }
 
@@ -75,8 +77,6 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10vw;
-
-
 }
 
 .title {
@@ -116,38 +116,47 @@ main {
     animation-delay: 0.6s;
 
 }
+.carousel-title {
+    text-align: center;
+    margin-top: 24vh;
+}
 
 .carousel {
-    font-family: "Source Sans 3", "sans serif";
-    border: 5px solid red;
-    width: 90%;
+    
+    margin-top: 6vh;
+    align-items: center;
     display: flex;
-
-    .carousel::-webkit-scrollbar {
-        display: none;
-    }
+    gap: 1em;
+    overflow: hidden;
 
     .group {
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-content: end;
         text-align: center;
         gap: 1em;
-        overflow-x: auto;
-        animation: carouselSlide 5s infinite linear;
+        flex-shrink: 0;
+        animation: carouselSlide linear infinite 60s;
+    }
 
-        .card {
-            flex: 0 0 5em;
-            height: 5em;
-            padding: 1em;
-            border-radius: .2em;
-            background-color: rgb(208, 231, 255);
-            border: 0.5px solid rgb(159, 159, 255);
-        }
+    h3 {
+        font-family: "Source Sans 3", sans-serif;
+    }
 
+    .card {
+        border: 1px solid #a7a7a7;
+        border-radius: .7em;
+        background: #e9e9e9;
+        width: 15em;
+        height: 10em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        flex-shrink: 0;
     }
 }
-
 
 
 iframe {
@@ -169,11 +178,11 @@ iframe {
 
 @keyframes carouselSlide {
     from {
-        translate: 0%;
+        transform: translateX(0);
     }
 
     to {
-        translate: 100%
+        transform: translateX(calc(-100% - 1em));
     }
 
 }
