@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="./styles.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -77,9 +78,12 @@
                            Mahmudul Hasan Rafi</a>
                       </h2>
                    </div>
-
+                   
                 </div>
             </section>
+            <div id="interactive-map" class="interactive-map" style="height: 600px; margin-top: 24vh; width: 80vw; display: flex; ">
+
+            </div>
         </div>
     
     </main>
@@ -95,6 +99,6 @@
             <u>MicroMelb</u> © 2026. <i>All Rights Reserved.</i>
         </p>
     </footer>
-
+    <script src="./map.js"></script>
 </body>
 </html>
