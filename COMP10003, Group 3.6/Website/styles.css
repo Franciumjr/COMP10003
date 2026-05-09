@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     text-align: center;
-
+    
 
 }
 
@@ -55,7 +55,11 @@ main {
     .container 
     {
         margin: 0;
-        display: block;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+
         color: white;
         .hero 
         {
