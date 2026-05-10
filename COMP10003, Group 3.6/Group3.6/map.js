@@ -1,3 +1,76 @@
+// COUNTER LOGIC 
+// ------------------------------------------------------------------
+
+const counters = document.querySelectorAll(".counters .num");
+const container = document.querySelector(".counter");
+
+let activated = false;
+
+window.addEventListener('scroll', () => {
+    // Only run if the container exists
+    if (!container) return;
+
+    // check the page position
+    if (pageYOffset > container.offsetTop - container.offsetHeight - 200
+        && activated === false) {
+        // iterate through counters as counter for each item
+        counters.forEach(counter => {
+            // set the initial value of counter as 0
+            counter.innerText = 0;
+
+            let count = 0;
+            const updateCount = () => {
+
+                //get the original value from the html
+                const target = parseInt(counter.dataset.count);
+                if (count < target) {
+                    count++;
+
+                    counter.innerText = count;
+
+                    setTimeout(updateCount, 15);
+                }
+                else {
+                    counter.innerText = target;
+                }
+                
+            }
+            updateCount();
+
+            // set activated to true
+            activated = true;
+        });
+    }
+    else if (pageYOffset < container.offsetTop - container.offsetHeight - 500 || pageYOffset == 0 && activated == true){
+        counters.forEach(counter => {
+            counter.innerText = 0;
+        });
+        activated = false;
+    }
+});
+
+
+// AUDIO CODE
+// ------------------------------------------------------------------
+
+let toggled = false;
+const checkBox = document.getElementById("audio-toggle");
+const toggleText = document.getElementById("toggle-text");
+
+checkBox.addEventListener('change', (event) => {
+    if (event.target.checked) {
+        toggleText.innerText = "ON";
+    }
+    else {
+        toggleText.innerText = "OFF";
+    }
+})
+
+
+
+
+// MAP CODE
+// ------------------------------------------------------------------
 var map = L.map('interactive-map', {
     center: [-37.7983, 144.9610],
     zoom: 16,
@@ -31,7 +104,27 @@ const campusBuildings = [
     {
         name: "Student Pavillion",
         coords: [-37.7987, 144.9634],
-        link: "spmicrowave402.html"
+        link: "stops.html"
+    },
+    {
+        name: "John Medley - East Tower",
+        coords: [-37.79928, 144.9606],
+        link: "mfjohnmedleymicro.html"
+    },
+    {
+        name: "John Medley - West Tower",
+        coords: [-37.79930, 144.96045],
+        link: "mfjohnmedleymicro.html"
+    },
+    {
+        name: "Western Edge BioSciences",
+        coords: [-37.7964, 144.9586],
+        link : "stops.html",
+    }, 
+    {
+        name: 'Old Agriculutral Building',
+        coords: [-37.79680,144.95863],
+        link: "stops.html",
     }
 ]
 
@@ -48,9 +141,18 @@ map.on('drag', function () {
 });
 
 
-
+//map each buildings as building and render it as popup marks
 campusBuildings.forEach(bldg => {
     L.marker(bldg.coords)
         .addTo(map)
-        .bindPopup(`<a target="_blank" href = "./${bldg.link}"><button style = "padding: 2px">${bldg.name}</button></a>`)
+        .bindPopup(`
+            <div style = "text-align: center;">
+            <h3 style = "margin: 1rem;">${bldg.name}</h3>
+            <a style = "display: flex; justify-content: center; gap: 10px; cursor: pointer; border-radius: 4px ; border: none; padding: .5rem; background: #abc2a7; target="_blank" href = "./${bldg.link}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg>
+                <button style = "cursor: pointer; border: none; background: none;">Visit</button>
+            </a>
+
+            </div>
+        `)
 })
