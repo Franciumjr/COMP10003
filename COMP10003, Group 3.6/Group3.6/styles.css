@@ -253,30 +253,46 @@ main {
 }
 
 .interactive {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
     margin-top: 24vh;
-    color: #000e46 ;
+    color: #000e46;
+
     h1 {
         color: #000e46;
         font-family: Fraunces;
 
     }
 
+    p {
+        margin-top: 1rem;
+    }
+    label {
+        font-family: "Source Sans 3";
+        font-weight: medium;
+        font-size: 1.25rem;
+    }
+    select {
+        padding: .75rem;
+    }
     /** SLIDERS **/
 
     /* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
 
     .slider {
         position: absolute;
@@ -303,11 +319,11 @@ main {
     }
 
     input:checked+.slider {
-        background-color: #46C8F0;
+        background-color: #000f45;
     }
 
     input:focus+.slider {
-        box-shadow: 0 0 1px #46C8F0;
+        box-shadow: 0 0 1px #000f45;
     }
 
     input:checked+.slider:before {
@@ -336,13 +352,13 @@ main {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     justify-content: center;
-    color: #000e46;
+    color:  #46C8F0;
 
     div {
         padding: 2rem;
-        background-color: #d4dad3;
+        background-color: #00114d;
         border-radius: 10px;
-        border: 1.5px solid #abc2a7;
+        border: 2px solid #000b34;
     }
 
     h1 {

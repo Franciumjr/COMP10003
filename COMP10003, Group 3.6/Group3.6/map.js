@@ -140,19 +140,71 @@ map.on('drag', function () {
     map.panInsideBounds(bounds, { animate: false });
 });
 
+// render individual buildings on dropdown menu
+
+const dropdownSection = document.querySelector(".interactive");
+
+const dropdown = document.createElement("select");
+dropdown.id = "building-select";
+
+const defaultOption = document.createElement("option");
+defaultOption.textContent = "Select a Building";
+defaultOption.value = "";
+dropdown.append(defaultOption);
+// Insert the dropdown right after the label "Choose starting point:"
+const label = document.querySelector('label[for="bldg1"]');
+if (label) {
+    label.insertAdjacentElement('afterend', dropdown);
+} else {
+    dropdownSection.appendChild(dropdown);
+}
+
+campusBuildings.forEach(bldg => {
+    const option = document.createElement('option');
+    option.innerText = bldg.name;
+    
+    option.value = bldg.name;
+    dropdown.append(option);
+});
+
+// Add an event listener to handle when a building is selected
+dropdown.addEventListener('change', (event) => {
+    const selectedName = event.target.value;
+    const selectedBldg = campusBuildings.find(bldg => bldg.name === selectedName);
+    
+    if (selectedBldg) {
+        // zoom the map to the selected building
+        map.setView(selectedBldg.coords, 18);
+        clickedBldgs.append(selectedBldg);
+        console.log(clickedBldgs)
+        // Open the popup for the selected building if the marker is saved
+        if (selectedBldg.marker) {
+            selectedBldg.marker.openPopup();
+        }
+    }
+});
 
 //map each buildings as building and render it as popup marks
-campusBuildings.forEach(bldg => {
-    L.marker(bldg.coords)
+campusBuildings.forEach(bldg => { 
+    bldg.marker = L.marker(bldg.coords)
         .addTo(map)
         .bindPopup(`
-            <div style = "text-align: center;">
-            <h3 style = "margin: 1rem;">${bldg.name}</h3>
-            <a style = "display: flex; justify-content: center; gap: 10px; cursor: pointer; border-radius: 4px ; border: none; padding: .5rem; background: #abc2a7; target="_blank" href = "./${bldg.link}">
+            <div style="text-align: center;">
+            <h3 style="margin: 1rem;">${bldg.name}</h3>
+            <a style="display: flex; justify-content: center; gap: 10px; cursor: pointer; border-radius: 4px; border: none; padding: .5rem; background: #abc2a7;" target="_blank" href="./${bldg.link}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg>
-                <button style = "cursor: pointer; border: none; background: none;">Visit</button>
+                <button style="cursor: pointer; border: none; background: none;">Visit</button>
             </a>
 
             </div>
-        `)
+        `);
 })
+
+// Distance Calculator
+let clickedBldgs = [];
+let markers = [];
+let polyline = null;
+
+
+
+    
