@@ -3,6 +3,8 @@ function playAudio(filename) {
     audio.play();
 }
 
-function autoAudio() {
-    if 
+function autoAudio(autoPlay, filename) {
+    if (autoPlay.value == "on") {
+        playAudio(filename);
+    }
 }
