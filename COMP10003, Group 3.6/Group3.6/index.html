@@ -11,13 +11,15 @@
 </head>
 
 <body>
-    <div class="header-break"></div>
+    
 
     <header>
         <img width="104" src="assets/unimelb.png " alt="">
+        <div class="vl"></div>
 
         <div>
             <h1>MicroMelb</h1>
+            
             <i>
                 <p>Microwaves around Parkville campus</p>
             </i>
@@ -102,8 +104,15 @@
             
             <section class="interactive">
                 <h1>Interactive Map</h1>
-                <label for="bldg1">Choose starting point:</label>
-                
+                <div class="interactive-label">
+                    
+                        <label for="bldg1">Choose starting point:</label>
+                        <div style="border: darkblue 1px solid; height: 2.5rem;" class="vl"></div>
+    
+                        <label for="bldg2">Choose ending point:</label>
+                    
+                </div>
+                <button class="btn">Calculate!</button>
                 <div>
                     <label class="switch">
                         <input type="checkbox" id="audio-toggle">

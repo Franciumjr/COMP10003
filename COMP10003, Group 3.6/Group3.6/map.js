@@ -2,6 +2,7 @@
 // ------------------------------------------------------------------
 
 const counters = document.querySelectorAll(".counters .num");
+const counterBoxes = document.querySelectorAll(".counters");
 const container = document.querySelector(".counter");
 
 let activated = false;
@@ -13,8 +14,13 @@ window.addEventListener('scroll', () => {
     // check the page position
     if (pageYOffset > container.offsetTop - container.offsetHeight - 200
         && activated === false) {
+        // Animate the counter boxes with a stagger
+        counterBoxes.forEach((box, index) => {
+            box.style.animation = `slide-up 500ms cubic-bezier(0.4, 0, 0.58, 1) both ${index * 0.05}s`;
+        });
+
         // iterate through counters as counter for each item
-        counters.forEach(counter => {
+        counters.forEach((counter) => {
             // set the initial value of counter as 0
             counter.innerText = 0;
 
@@ -42,8 +48,13 @@ window.addEventListener('scroll', () => {
         });
     }
     else if (pageYOffset < container.offsetTop - container.offsetHeight - 500 || pageYOffset == 0 && activated == true){
+        counterBoxes.forEach((box) => {
+            box.style.animation = 'none';
+        });
         counters.forEach(counter => {
             counter.innerText = 0;
+            // reset animation
+            counter.style.animation = 'none';
         });
         activated = false;
     }
@@ -140,49 +151,80 @@ map.on('drag', function () {
     map.panInsideBounds(bounds, { animate: false });
 });
 
+
+// Distance Calculator
+let clickedBldgs = [];
+let markers = [];
+let polyline = null;
+
 // render individual buildings on dropdown menu
 
 const dropdownSection = document.querySelector(".interactive");
 
-const dropdown = document.createElement("select");
-dropdown.id = "building-select";
+const startdropdown = document.createElement("select");
+const enddropdown = document.createElement("select");
 
-const defaultOption = document.createElement("option");
-defaultOption.textContent = "Select a Building";
-defaultOption.value = "";
-dropdown.append(defaultOption);
+startdropdown.id = "start-building-select";
+enddropdown.id = "end-building-select"
+
+const startdefaultOption = document.createElement("option");
+startdefaultOption.textContent = "Select Starting Point";
+startdropdown.append(startdefaultOption);
+
+const enddefaultOption = document.createElement("option");
+enddefaultOption.textContent = "Select Ending Point";
+enddropdown.append(enddefaultOption);
+
+enddefaultOption.value, startdefaultOption.value = "";
+
 // Insert the dropdown right after the label "Choose starting point:"
-const label = document.querySelector('label[for="bldg1"]');
-if (label) {
-    label.insertAdjacentElement('afterend', dropdown);
+const startlabel = document.querySelector('label[for="bldg1"]');
+if (startlabel) {
+    startlabel.insertAdjacentElement('afterend', startdropdown);
 } else {
-    dropdownSection.appendChild(dropdown);
+    dropdownSection.appendChild(startdropdown);
+}
+
+const endlabel = document.querySelector('label[for="bldg2"]');
+if (endlabel) {
+    endlabel.insertAdjacentElement('afterend', enddropdown);
+} else {
+    dropdownSection.appendChild(enddropdown);
 }
 
 campusBuildings.forEach(bldg => {
-    const option = document.createElement('option');
-    option.innerText = bldg.name;
-    
-    option.value = bldg.name;
-    dropdown.append(option);
+    const startOption = document.createElement('option');
+    startOption.innerText = bldg.name;
+    startOption.value = bldg.name;
+    startdropdown.append(startOption);
+
+    const endOption = document.createElement('option');
+    endOption.innerText = bldg.name;
+    endOption.value = bldg.name;
+    enddropdown.append(endOption);
 });
 
 // Add an event listener to handle when a building is selected
-dropdown.addEventListener('change', (event) => {
+[startdropdown, enddropdown].forEach(dropdown => {
+    dropdown.addEventListener('change', (event) => {
     const selectedName = event.target.value;
     const selectedBldg = campusBuildings.find(bldg => bldg.name === selectedName);
     
     if (selectedBldg) {
         // zoom the map to the selected building
         map.setView(selectedBldg.coords, 18);
-        clickedBldgs.append(selectedBldg);
+        clickedBldgs.push(selectedBldg.name);
+        console.log(clickedBldgs)
+
         console.log(clickedBldgs)
         // Open the popup for the selected building if the marker is saved
         if (selectedBldg.marker) {
             selectedBldg.marker.openPopup();
+            
         }
     }
-});
+})});
+    
 
 //map each buildings as building and render it as popup marks
 campusBuildings.forEach(bldg => { 
@@ -200,10 +242,7 @@ campusBuildings.forEach(bldg => {
         `);
 })
 
-// Distance Calculator
-let clickedBldgs = [];
-let markers = [];
-let polyline = null;
+
 
 
 
