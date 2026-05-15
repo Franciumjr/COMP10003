@@ -4,20 +4,72 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+
+}
+
+.btn {
+    border: none;
+    font-family: "Source Sans 3", sans-serif;
+    transition: all 200ms ease-in-out;
+    width: 9em;
+    height: 2.5em;
+    margin: 0.25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    background-color: #46C8F0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #D1F1FB;
+}
+
+.btn::nth-child(1) {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn::nth-child(1):hover {
+    background-color: white;
+    color: #46C8F0;
+}
+
+.btn:nth-child(2) {
+    background-color: transparent;
+    border: 2px solid #46C8F0;
+    color: #46C8F0;
+}
+
+.btn:nth-child(2):hover {
+    background-color: #D1F1FB;
+    color: black;
+    border: 2px solid #D1F1FB;
 }
 
 body {
+
     text-align: center;
-    background-color: #000b34;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
-.header-break{
+.header-break {
     height: 2vh;
     background-color: #000b34;
     border-bottom: solid 1.5px #212e5d;
@@ -29,7 +81,21 @@ a {
     color: black;
 }
 
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+
+
+
+}
+
 header {
+    .vl {
+        border-left: 1px solid white;
+        height: 4rem;
+    }
+    font-family: Fraunces;
     margin-bottom: 0;
     color: white;
     background-color: #000F46;
@@ -37,15 +103,20 @@ header {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    padding: .5rem; 
+    padding: .5rem;
     border-bottom: solid 1.5px #212e5d;
 
+    h1 {
+        font-weight: medium;
+    }
+
     p {
+        font-family: "Source Sans 3";
         font-weight: 300;
     }
 }
 
-main{
+main {
     background-color: white;
 
     h1 {
@@ -61,14 +132,12 @@ main{
 
     }
 
-    .container 
-    {
+    .container {
         margin: 0;
         display: block;
         color: white;
 
-        .hero 
-        {
+        .hero {
             padding: 4rem;
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/hero-bg.jpg");
             object-fit: cover;
@@ -89,87 +158,34 @@ main{
                 text-align: left;
             }
 
-            p {  
+            p {
                 width: 50vw;
                 font-size: 20px;
                 font-family: "Source Sans 3", sans-serif;
                 text-align: left;
             }
 
-        .button-container{
-            display: flex;
-            justify-content: flex-start;
-            width: 100%;
-                        
-            .btn{
-                font-family: "Source Sans 3", sans-serif;
-                transition: all 200ms ease-in-out;
-                width: 9em;
-                height: 2.5em;
-                margin: 0.25em;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 20px;
-                font-weight: bold;
-                cursor: pointer;
-                position: relative;
-                z-index: 1;
-                background-color: #46C8F0;
-                border-radius: 8px;
-                text-decoration: none;
-                font-weight: 600;
-            }
 
-            }
-            .btn:hover 
-            {
-                background-color: #D1F1FB;
-            }
-            
-            .btn::nth-child(1)
-            {
-                background-color: transparent;
-                color: white;
-                border: 2px solid white;
-            }
-            .btn::nth-child(1):hover
-            {
-                background-color: white;
-                color: #46C8F0;
-            }
 
-            .btn:nth-child(2)
-            {
-                background-color: transparent;
-                border: 2px solid #46C8F0;
-                color: #46C8F0;
-            }
-            .btn:nth-child(2):hover
-            {
-                background-color: #D1F1FB;
-                color: black;
-                border: 2px solid #D1F1FB;
-            }
+
         }
 
-        h2 
-        {
+        h2 {
             font-size: 24px;
             font-family: "Fraunces", serif;
             font-weight: light;
             background: none;
         }
 
-        p 
-        {
+        p {
             font-size: 16px;
             font-family: "Inter", sans-serif;
         }
-         
+
     }
-    .team 
-    {
+
+    .team {
+        width: 100%;
         height: 80vh;
         display: flex;
         flex-direction: column;
@@ -177,28 +193,27 @@ main{
         justify-content: center;
         color: black;
         background-color: white;
-        
+
         h1 {
             font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 44px;
             font-weight: 600;
             color: #000e46;
             margin: 2rem;
-        } 
+        }
     }
 
-    .team-members 
-    {
+    .team-members {
+
         display: flex;
         flex-direction: row;
         gap: 30px;
         justify-content: center;
 
-        .team-member 
-        {
+        .team-member {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: .5rem;
             justify-content: center;
             transition: transform 200ms ease-in-out;
             cursor: pointer;
@@ -215,27 +230,24 @@ main{
                 text-decoration: none;
                 color: inherit;
             }
-            
-            img 
-            {
-                width: 230px;
-                height: 230px;
+
+            img {
+                width: 220px;
+                height: 220px;
                 border-radius: 8px;
             }
-            
-            h2 
-            {
+
+            h2 {
                 font-size: 24px;
                 font-family: "Source Sans 3", sans-serif;
                 background: none;
 
-                a{
+                a {
                     display: inline-block;
                 }
             }
-            
-            p 
-            {
+
+            p {
                 font-size: 16px;
                 font-weight: 500;
                 font-family: "Source Sans 3", sans-serif;
@@ -244,14 +256,145 @@ main{
     }
 }
 
-.footer-break{
+.footer-break {
     height: 2vh;
     background-color: #000b34;
     width: 100%;
     border-top: solid 1.5px #dedfe6;
 }
 
-footer{
+.interactive {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 24vh;
+    color: #000e46;
+
+    h1 {
+        color: #000e46;
+        font-family: Fraunces;
+
+    }
+
+    p {
+        margin-top: 1rem;
+    }
+
+    .interactive-label {
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+        align-items: center;
+
+
+    }
+
+    label {
+        font-family: "Source Sans 3";
+        font-weight: medium;
+        font-size: 1.25rem;
+    }
+
+    select {
+        padding: .75rem;
+    }
+
+    /** SLIDERS **/
+
+    /* The switch - the box around the slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: #000f45;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #000f45;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+
+}
+
+.counter {
+
+    margin: 12vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    color: #46C8F0;
+
+    div {
+        padding: 2rem;
+        background-color: #00114d;
+        border-radius: 10px;
+        border: 2px solid #000b34;
+    }
+
+    h1 {
+        font-family: Fraunces;
+        font-size: 60px;
+    }
+
+    p {
+        font-weight: bold;
+        font-family: "Source Sans 3", "sans-serif";
+    }
+}
+
+footer {
     font-family: "Source Sans 3", sans-serif;
     font-size: 18px;
     font-weight: 500;
@@ -263,7 +406,7 @@ footer{
     align-items: center;
     padding: var(--space-3) 20px var(--space-3) 0;
 
-    .logo{
+    .logo {
         border-right: solid 1.5px #212e5d;
         padding: 0 0.5rem 0 0.5rem;
         margin: 0;
@@ -275,19 +418,20 @@ footer{
         flex-direction: column;
         align-items: center;
     }
-        img{
-            height: 100%;
-            width: auto;
-            max-width: 104px;
-            object-fit: cover;
-        }
 
-    .copywrite{
+    img {
+        height: 100%;
+        width: auto;
+        max-width: 104px;
+        object-fit: cover;
+    }
+
+    .copywrite {
         text-align: center;
     }
 }
 
-header.explanation{
+header.explanation {
     margin: 0;
     color: white;
     background-color: #000F46;
@@ -297,23 +441,23 @@ header.explanation{
     justify-content: center;
     border-bottom: solid 1.5px #212e5d;
 
-    p{
+    p {
         font-weight: 200;
         margin: 0;
     }
 
-    h1{
+    h1 {
         margin: 0;
     }
 
-    &>div{
+    &>div {
         display: flex;
         flex-direction: row;
         align-items: center;
         align-self: center;
         justify-content: center;
         gap: 1rem;
-        padding: .5rem 0; 
+        padding: .5rem 0;
     }
 
     .brand {
@@ -323,7 +467,7 @@ header.explanation{
         gap: 0;
     }
 
-    .home-button{
+    .home-button {
         margin: 0;
         text-align: left;
         justify-self: start;
@@ -336,12 +480,12 @@ header.explanation{
         padding: 0 2.25rem;
         transition: all 200ms ease-in-out;
 
-        a{
+        a {
             color: #abc2a7;
             font-weight: 200;
             text-decoration: none;
 
-            &:hover{
+            &:hover {
                 color: #d4e5d2;
                 text-decoration: underline;
             }
@@ -349,43 +493,43 @@ header.explanation{
     }
 }
 
-main.explanation{
+main.explanation {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 
-    .explain{
+    .explain {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 1.5rem;
         padding: 2rem;
 
-        h1{
+        h1 {
             width: 100%;
             color: #000e46;
         }
 
-        article.explain{
+        article.explain {
             flex: 1 1 250px;
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
             padding: 1.5rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
 
-            h2{
+            h2 {
                 color: #000e46;
                 margin: 1rem;
                 text-align: center;
             }
 
-            p{
+            p {
                 text-align: left;
             }
         }
     }
 
-    section:last-child{
+    section:last-child {
         display: flex;
         flex-direction: row;
         gap: 1.5rem;
@@ -394,33 +538,33 @@ main.explanation{
         background-color: #eeeeee;
         border-top: solid 1.5px #dedfe6;
 
-        article{
+        article {
             flex: 1;
             background-color: white;
             border-radius: 8px;
             padding: 1.25rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
 
-            h2{
+            h2 {
                 color: #000e46;
                 font-size: 30px;
                 margin-bottom: 1rem;
             }
 
-            img{
+            img {
                 width: 100%;
                 height: auto;
                 display: block;
                 border-radius: 8px;
             }
         }
-        
-        .ref-list{
-            h2{
+
+        .ref-list {
+            h2 {
                 margin-bottom: 1rem;
             }
 
-            ul{
+            ul {
                 list-style: none;
                 padding: 0;
                 margin: 0;
@@ -429,7 +573,7 @@ main.explanation{
                 gap: 0.5rem;
             }
 
-            li{
+            li {
                 font-family: "Source Sans 3", sans-serif;
                 font-size: 14px;
                 color: #414141;
@@ -439,12 +583,12 @@ main.explanation{
                 border-radius: 0 6px 6px 0;
                 text-align: left;
 
-                a{
+                a {
                     color: #000F46;
                     text-decoration: none;
                     word-break: break-all;
 
-                    &:hover{
+                    &:hover {
                         text-decoration: underline;
                     }
                 }
@@ -453,7 +597,7 @@ main.explanation{
     }
 }
 
-footer.explanation{
+footer.explanation {
     font-family: "Source Sans 3", sans-serif;
     font-size: 18px;
     font-weight: 500;
@@ -465,7 +609,7 @@ footer.explanation{
     align-items: center;
     padding: var(--space-3) 20px var(--space-3) 0;
 
-    &.logo{
+    &.logo {
         border-right: solid 1.5px #212e5d;
         padding: 0 0.5rem 0 0.5rem;
         margin: 0;
@@ -477,17 +621,18 @@ footer.explanation{
         flex-direction: column;
         align-items: center;
     }
-        img{
-            height: 100%;
-            width: auto;
-            max-width: 104px;
-            object-fit: cover;
-        }
 
-    .copywrite{
+    img {
+        height: 100%;
+        width: auto;
+        max-width: 104px;
+        object-fit: cover;
+    }
+
+    .copywrite {
         text-align: center;
 
-        .name{
+        .name {
             font-size: 14px;
             font-weight: 200;
             color: #cdcdcd;
@@ -495,12 +640,25 @@ footer.explanation{
         }
     }
 
-    .wordcount{
+    .wordcount {
         font-size: 14px;
         padding-right: 2.5rem;
 
-        .count{
+        .count {
             color: #abc2a7;
         }
+    }
+}
+
+/** Animations **/
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(75%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
     }
 }
