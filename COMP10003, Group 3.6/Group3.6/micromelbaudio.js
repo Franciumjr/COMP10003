@@ -4,7 +4,7 @@ function playAudio(filename) {
 }
 
 function autoAudio(autoPlay, filename) {
-    if (autoPlay.value == "on") {
+    if (autoPlay.checked) {
         playAudio(filename);
     }
 }
