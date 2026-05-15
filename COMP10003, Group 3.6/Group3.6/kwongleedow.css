@@ -57,6 +57,7 @@ header {
     }
 }
 main {
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
      .container {
@@ -167,6 +168,44 @@ main {
     color: #ffc107;
 }
 
+.carousel {
+    
+    margin-top: 6vh;
+    align-items: center;
+    display: flex;
+    gap: 1em;
+    overflow: hidden;
+
+    .group {
+        display: flex;
+        justify-content: center;
+        align-content: end;
+        text-align: center;
+        gap: 1em;
+        flex-shrink: 0;
+        animation: carouselSlide linear infinite 60s;
+    }
+
+    h3 {
+        font-family: "Source Sans 3", sans-serif;
+    }
+
+    .card {
+        border: 1px solid #a7a7a7;
+        border-radius: .7em;
+        background: #e9e9e9;
+        width: 15em;
+        height: 10em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        flex-shrink: 0;
+    }
+}
+
+
 iframe {
     margin-top: 50vh;
 }
@@ -223,7 +262,27 @@ footer.explanation{
     }
 }
 /** Animation**/
+
+
 @keyframes slideUpAnimation {
-  0% { transform: translateY(100px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes carouselSlide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - 1em));
+    }
+
 }
