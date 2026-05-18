@@ -103,7 +103,7 @@ const campusBuildings = [
         link: "GlynDavis.html"
     },
     {
-        name: "Law Buiding",
+        name: "Law Building",
         coords: [-37.8023, 144.9600],
         link: "lawbuilding.html"
     },
@@ -113,7 +113,7 @@ const campusBuildings = [
         link: "233Bouverie (1).html"
     },
     {
-        name: "Student Pavillion",
+        name: "Student Pavilion",
         coords: [-37.7987, 144.9634],
         link: "stops.html"
     },
