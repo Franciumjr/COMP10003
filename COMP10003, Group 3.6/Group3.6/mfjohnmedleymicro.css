@@ -2,14 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital, opsz, wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+ 3:ital,wght@0,200..900;1,200..900&display=swap');
 
+
 .container {
     display: flex;
     justify-content: space-evenly;
 }
 body {
     margin: 0;
-    font-family: "Fraunces", serif;
-    background-color: white;
+    font-family: "Fraunces", sans-serif;
+    background-color: #d2f7ff;
+    background-image: linear-gradient(rgba(151, 151, 151, 0.7), rgba(255, 255, 255, 0.7)), url("assets/jm_background.webp");
+    backdrop-filter: blur(5px);
+    
 }
 section {
     margin: 15px;
@@ -39,8 +43,9 @@ h3, textarea, img, table {
 }
 img {
     background-color: aliceblue;
-    padding: 2vw;
+    padding: 1vw;
     margin-top: 34px;
+    align-content: center;
 }
 h3 {
     font-size: 25pt;
@@ -75,6 +80,7 @@ h4 {
 }
 table {
     justify-content: center;
+    background-color: white;
 }
 p, th, td {
     font-size: 16pt;
