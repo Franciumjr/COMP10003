@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    
+
 
     <header>
         <img width="104" src="assets/unimelb.png " alt="">
@@ -19,7 +19,7 @@
 
         <div>
             <h1>MicroMelb</h1>
-            
+
             <i>
                 <p>Microwaves around Parkville campus</p>
             </i>
@@ -99,35 +99,40 @@
                     </div>
 
                 </div>
-                
-            </section>
-            
-            <section class="interactive">
-                
-                <h1>Interactive Map dfudshfhdsohfods</h1>
-                <div class="interactive-label">
-                    
-                        <label for="bldg1">Choose starting point:</label>
-                        <div style="border: darkblue 1px solid; height: 2.5rem;" class="vl"></div>
-    
-                        <label for="bldg2">Choose ending point:</label>
-                    
-                </div>
-                <button class="btn">Calculate!</button>
-                <div>
-                    <label class="switch">
-                        <input type="checkbox" id="audio-toggle">
-                        <span class="slider round"></span>
-                        
-                    </label>
-                <p>Audio: <span id="toggle-text">OFF</span></p>
-                </div>
-                
-                <div id="interactive-map" class="interactive-map"
-                    style="height: 600px; margin-top: 24px; margin-bottom: 24vh; width: 80vw; display: flex; margin-left: auto; margin-right: auto; ">
 
+            </section>
+
+            <section class="interactive">
+                <div class="interactive-left">
+                    <h1>Interactive Map</h1>
+                    <p>Find the Microwaves next to you.</p>
+                    <div class="interactive-label">
+
+                        <label for="bldg1"></label>
+                        <label for="bldg2"></label>
+
+                    </div>
+                    <button class="btn">Calculate!</button>
+                    <div>
+                    
+                    <label class="switch">
+                            <input type="checkbox" id="audio-toggle">
+                            <span class="slider round"></span>
+                            <p>Audio: <span id="toggle-text">OFF</span></p>
+                    </label>
                 </div>
-             </section>
+                <aside>
+                    
+                        
+                        
+                    </div>
+
+                    <div id="interactive-map" class="interactive-map"
+                        style="flex-grow: 2; width: 50vw; display: flex; margin-left: auto; margin-right: auto; ">
+
+                    </div>
+                </aside>
+            </section>
         </div>
 
     </main>
