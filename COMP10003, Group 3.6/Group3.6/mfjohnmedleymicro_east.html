@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Medley Building</title>
+    <link rel="stylesheet" href="./mfjohnmedleymicro.css">
+    <script>
+        function thanks() {             // function to thank users for their comment
+            alert ('Thanks!!')
+            userComment1.value = ""      // resets the text box after the comment is submitted
+            userComment2.value = ""
+        }
+        let img_width = "80%";              // variable to set the width of all images, so they are consistent and easily changeable
+    </script>
+</head>
+<body>
+    <h1>John Medley Building</h1>
+    <h2>Microwave #1: East Tower, Lvl 2</h2>
+    <div class="container" name="microwave1">       <!-- the class is given to apply flex, in order to set the sections horizontally next to each other -->
+        <section>
+            <figure>
+                <img src="assets/jm_easttower_micro_1.jpg" width="80%">
+            </figure>
+            <figcaption>
+                Outside the kitchenette.
+            </figcaption>
+            <figure>
+                <img src="assets/jm_easttower_micro_2.jpeg" width="80%">
+            </figure>
+            <figcaption>
+                Microwave and surrounding amenities.
+            </figcaption>
+            <figure>
+                <img src="assets/jm_easttower_micro_3.jpg" width="80%">
+            </figure>
+            <figcaption>
+                Sink, paper towel dispenser, and some storage.
+            </figcaption>
+            <figure>
+                <img src="assets/jm_easttower_micro_4.jpg" width="80%">
+            </figure>
+            <figcaption>
+                Inside the microwave and controls.
+            </figcaption>
+        </section>
+
+        <section>
+            <h3>Overall Rating: 4/10</h3>
+            <table class="container">
+                <tr>
+                    <th>Category</th>
+                    <th>Rating</th>
+                </tr>
+                <tr>
+                    <th>Environment</th>
+                    <td>3/10</td>
+                </tr>
+                <tr>
+                    <th>Accessibility</th>
+                    <td>3/10</td>
+                </tr>
+                <tr>
+                    <th>Functionality</th>
+                    <td>6/10</td>
+                </tr>
+                <tr>
+                    <th>Facilities</th>
+                    <td>5/10</td>
+                </tr>
+            </table>
+            <h3>Directions</h3>
+            <p>Under the welcome sign at the main entrance of the university, turn left and head into the East Tower of the John Medley Building. Turn right as you enter, find the elevator, and take it to the second floor. After exiting the elevator, take 3 quick lefts and you will find yourself in the kitchenette!</p>
+            <audio controls>
+                <source src="assets/johnmed_directions1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        
+            <h3>Comment from the Authors</h3>
+            <p>This microwave is less than desirable than most, its main limitation being the restrictive area surrounding it, giving it its poor environment and accessibility ratings. It does however make up for these shortcomings in its functionality and nearby facilities. It's a fairly modern design, so easy to use, and the room has a sink as well as a fridge, so a very versatile space.</p>
+            <audio controls>
+                <source src="assets/jm_comment_1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <h3>Leave your comment!</h3>
+            <textarea type="text" id="userComment1" name="userComment1" cols="58" rows="5" class="container" placeholder="10/10 would come here again"></textarea>      <!-- the id and names are given to allow easier identification of the content when we recieve it, and to allow the function to remove its content. -->
+            <br>
+            <button onclick="thanks()" id="submit">Submit</button>
+        </section>
+    </div>
+
+    <footer>
+        <h4>Return to <a href="index.html" class="link">home page</a></h4>
+    </footer>
+    <p class="copyright">MicroMelb &#169; 2026</p>
+    <p>Word count: 174</p>
+</body>
+</html>

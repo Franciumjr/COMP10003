@@ -120,12 +120,12 @@ const campusBuildings = [
     {
         name: "John Medley - East Tower",
         coords: [-37.79928, 144.9606],
-        link: "mfjohnmedleymicro.html"
+        link: "mfjohnmedleymicro_east.html"
     },
     {
         name: "John Medley - West Tower",
         coords: [-37.79930, 144.96045],
-        link: "mfjohnmedleymicro.html"
+        link: "mfjohnmedleymicro_west.html"
     },
     {
         name: "Western Edge BioSciences",
