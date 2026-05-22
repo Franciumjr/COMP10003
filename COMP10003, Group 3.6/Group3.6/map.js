@@ -102,7 +102,7 @@ var map = L.map('interactive-map', {
     center: [-37.7983, 144.9610],
     zoom: 16,
     minZoom: 16,
-    maxZoom: 19
+    maxZoom: 18
 });
 
 
@@ -230,13 +230,11 @@ campusBuildings.forEach(bldg => {
         // zoom the map to the selected building
         map.setView(selectedBldg.coords, 18);
         clickedBldgs.push(selectedBldg.name);
-        console.log(clickedBldgs)
 
         console.log(clickedBldgs)
         // Open the popup for the selected building if the marker is saved
         if (selectedBldg.marker) {
             selectedBldg.marker.openPopup();
-            
         }
     }
 })});
@@ -249,8 +247,8 @@ campusBuildings.forEach(bldg => {
         .bindPopup(`
             <div style="text-align: center;">
             <h3 style="margin: 1rem;">${bldg.name}</h3>
-            <a style="display: flex; justify-content: center; gap: 10px; cursor: pointer; border-radius: 4px; border: none; padding: .5rem; background: #abc2a7;" target="_blank" href="./${bldg.link}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg>
+            <a style="display: flex;  justify-content: center; gap: 10px; cursor: pointer; border-radius: 4px; border: none; padding: .5rem; background: #46C8F0;" target="_blank" href="./${bldg.link}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 <button style="cursor: pointer; border: none; background: none;">Visit</button>
             </a>
 
