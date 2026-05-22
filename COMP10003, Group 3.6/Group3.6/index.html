@@ -41,19 +41,21 @@
                 </div>
             </section>
 
-            <section class="counter">
-                <div class="counters">
-                    <h1><span class="num" data-count="8">0</span><span>+</span></h1>
-                    <p>Buildings found</p>
-                </div>
-                <div class="counters">
-                    <h1><span class="num" data-count="10">0</span><span>+</span></h1>
-                    <p>Microwaves Covered</p>
-                </div>
-                <div class="counters">
-                    <h1><span class="num" data-count="85">0</span><span>%</span></h1>
-                    <p>Positive feedback</p>
-                </div>
+            <section class="countercase">
+                <section class="counter">
+                    <div class="counters">
+                        <h1><span class="num" data-count="8">0</span><span>+</span></h1>
+                        <p>Buildings found</p>
+                    </div>
+                    <div class="counters">
+                        <h1><span class="num" data-count="10">0</span><span>+</span></h1>
+                        <p>Microwaves Covered</p>
+                    </div>
+                    <div class="counters">
+                        <h1><span class="num" data-count="85">0</span><span>%</span></h1>
+                        <p>Positive feedback</p>
+                    </div>
+                </section>
             </section>
 
             <section class="team" id="team">
@@ -107,12 +109,12 @@
                     <h1>Interactive Map</h1>
                     <p>Find the Microwaves next to you.</p>
                     <div class="interactive-label">
-
-                        <label for="bldg1"></label>
-                        <label for="bldg2"></label>
-
+                        <label for="bldg1" class="point"></label>
+                        <label for="bldg2" class="point"></label>
                     </div>
-                    <button class="btn">Calculate!</button>
+
+                    <button class="btncalc">Calculate</button>
+                    
                     <div>
                     
                     <label class="switch">
@@ -122,9 +124,6 @@
                     </label>
                 </div>
                 <aside>
-                    
-                        
-                        
                     </div>
 
                     <div id="interactive-map" class="interactive-map"
@@ -136,6 +135,15 @@
         </div>
 
     </main>
+
+    <footer class="acknowledgement">
+        <h3>Acknowledgement of Country</h3>
+        <div class="flags">
+            <img src="assets/aboriginal.png" alt="Aboriginal Flag">
+            <img src="assets/torresflag.jpg" alt="Torres Strait Islander Flag">
+        </div>
+        <p>We, MicroMelb, acknowledge Aboriginal and Torres Strait Islander people as the Traditional Owners of the unceded lands on which we work, learn, live, and microwave. We pay respect to Elders past, present and future, and acknowledge the importance of Indigenous knowledge in the Academy.</p>
+    </footer>
 
     <div class="footer-break"></div>
 
