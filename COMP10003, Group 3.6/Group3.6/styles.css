@@ -60,10 +60,12 @@ html {
     color: black;
     border: 2px solid #D1F1FB;
 }
+
 .btn:nth-child(3) {
     background-color: #000e46;
     color: #46C8F0;
 }
+
 body {
 
     text-align: center;
@@ -88,9 +90,6 @@ a {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-
-
-
 }
 
 header {
@@ -98,6 +97,7 @@ header {
         border-left: 1px solid white;
         height: 4rem;
     }
+
     font-family: Fraunces;
     margin-bottom: 0;
     color: white;
@@ -271,7 +271,7 @@ main {
     text-align: left;
     display: flex;
     flex-direction: row;
-    
+
     align-items: stretch;
     justify-content: center;
     margin-top: 24vh;
@@ -282,6 +282,7 @@ main {
         p {
             font-weight: bold;
         }
+
         border: 1.5px solid #38a4c4;
         padding-left: 2rem;
         display: flex;
@@ -297,40 +298,41 @@ main {
 
         .interactive-label {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             gap: .5rem;
             align-items: flex-start;
-        
-        label {
-            background-color: white;
+
+
+
+            label {
+                background-color: white;
+            }
         }
     }
-    }
-    
+
     aside {
         display: flex;
         flex-direction: column;
         gap: rem;
     }
-   
+
 
     p {
         margin-top: 1rem;
     }
 
-    
+
 
     label {
         font-family: "Source Sans 3";
         font-weight: medium;
         border: none;
         background: transparent;
-        
+
     }
 
     select {
-        padding: .75rem;
-        
+        padding: 1rem;
         background-color: transparent;
     }
 
