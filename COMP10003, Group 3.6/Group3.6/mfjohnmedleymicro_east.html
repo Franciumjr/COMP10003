@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Medley Building</title>
+    <title>John Medley East Tower</title>
     <link rel="stylesheet" href="./mfjohnmedleymicro.css">
     <script src="micromelbaudio.js"></script>
     <script>
@@ -12,10 +12,14 @@
             userComment1.value = ""      // resets the text box after the comment is submitted
             userComment2.value = ""
         }
+        window.onload = function() {
+            alert("hi")
+            autoAudio('assets/notuntitled 2.mp3');
+        }
     </script>
 </head>
-<body onload = "autoAudio('assets/notuntitled 2.mp3')">
-    <h1>John Medley Building</h1>
+<body>
+    <h1>John Medley East Tower</h1>
     <h2>Microwave #1: East Tower, Lvl 2</h2>
     <div class="container" name="microwave1">       <!-- the class is given to apply flex, in order to set the sections horizontally next to each other -->
         <section>
