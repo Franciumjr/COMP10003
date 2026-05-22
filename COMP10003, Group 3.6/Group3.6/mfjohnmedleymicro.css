@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-evenly;
 }
+
 body {
     margin: 0;
     font-family: "Source Sans 3", sans-serif;
@@ -17,6 +18,7 @@ section {
     margin: 15px;
     width: 32%;
 }
+
 h1 {
     font-size: 45pt;
     margin: 0;
@@ -25,6 +27,7 @@ h1 {
     background-color: #000F46;
     color: white;
 }
+
 h2 {
     font-size: 35pt;
     text-align: center;
@@ -35,17 +38,35 @@ h2 {
     border-width: 5px;
     margin-left: 450px;
     margin-right: 450px;
+
 }
-div {
-    margin: 60px;
+
+h3 {
+    font-size: 25pt;
+    background-color: aliceblue;
+    text-align: center;
 }
-h3, textarea, img, table {
+
+h4 {
+    color: white;
+    text-align: center;
+    background-color: #000F46;
+    padding: 8px;
+    margin: 0;
+}
+
+h3, textarea, img, table, button {
     border: solid;
     border-width: 3px;
     border-radius: 10px;
     padding: 8px;
     box-shadow: 10px 10px 13px #333333
 }
+
+div {
+    margin: 60px;
+}
+
 img {
     background-color: aliceblue;
     padding: 1vw;
@@ -58,12 +79,6 @@ img:hover {
     transform: scale(1.05);
 }
 
-h3 {
-    font-size: 25pt;
-    background-color: aliceblue;
-    text-align: center;
-}
-
 textarea {
     transition: background-color 200ms ease-in-out;
 }
@@ -71,9 +86,11 @@ textarea {
 textarea:hover {
     background-color: rgb(236, 236, 238);
 }
+
 button {
     margin: 20px;
 }
+
 footer {
     margin-left: 40vw;
     margin-right: 40vw;
@@ -82,62 +99,53 @@ footer {
     border-radius: 10px;
     box-shadow: 8px 8px 10px #333333
 }
-h4 {
-    color: white;
-    text-align: center;
-    background-color: #000F46;
-    padding: 8px;
-    margin: 0;
-}
+
 .link {
     color: rgb(126, 167, 221);
 }
 .link:hover {
     color: rgb(179, 210, 233);
 }
+
 table {
     justify-content: center;
     background-color: white;
 }
-p, th, td {
-    font-size: 16pt;
-}
-button {
-    font-size: 14pt;
-    padding: 3px;
-}
+
 td, th {
     width: 200px;
     text-align: center;
 }
+
+p, th, td {
+    font-size: 16pt;
+}
+
 .copyright {
     text-align: center; 
     font-size: 12pt; 
     margin: 50px;
 }
+
 figure {
     margin: 0;
     margin-bottom: 20px;
 }
 
-#submit {
+button {
   background-color: aliceblue;
-  border: none;
-  color: rgb(0, 0, 0);
+  color: #000000;
   padding: 10px 20px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 14pt;
   cursor: pointer;
-  border: solid;
-  border-width: 3px;
-  border-radius: 10px;
-  transition: border-width 200ms ease-in-out, background-color 200ms ease-in-out, transform 200ms ease-in-out;
+  transition: border-width 200ms ease-in-out, background-color 200ms ease-in-out, transform 200ms ease-in-out, font-size 200ms ease-in-out;
 }
-#submit:hover {
+button:hover {
     background-color: rgb(185, 204, 221);
     transform: scale(1.1);
-    border-width: none;
+    border-width: 2px;
+    font-size: 14.5pt;
 }
 
