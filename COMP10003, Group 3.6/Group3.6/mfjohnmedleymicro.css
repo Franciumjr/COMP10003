@@ -31,6 +31,10 @@ section {
     width: 32%;
 }
 
+.para {
+    background-color: var(--secondary-color-light);
+}
+
 h1 {
     font-size: 45pt;
     margin: 0;
@@ -68,20 +72,20 @@ h4 {
     margin: 0;
 }
 
-h2, h3, textarea, figure, table, button {
+h2, h3, textarea, figure, table, button, .para {
     border: solid;
     border-width: 3px;
-    border-radius: 20px;
+    border-radius: 17px;
     padding: 8px;
     box-shadow: 10px 10px 13px var(--shadow-color)
 }
 
 div {
-    margin: 60px;
+    margin: 50px;
 }
 
 img {
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 
