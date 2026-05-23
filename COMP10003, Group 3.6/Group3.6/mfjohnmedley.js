@@ -2,7 +2,7 @@ function descriptionAppear(id) {
     document.getElementById("description").style.opacity = "100%";
     if (id == "environment") {
         document.getElementById("descriptionHead").innerHTML = "Environment"
-        document.getElementById("descriptionText").innerHTML = "The cleanliness of the surrounding area.";
+        document.getElementById("descriptionText").innerHTML = "The cleanliness and vibe of the surrounding area.";
     }
     if (id == "accessibility") {
         document.getElementById("descriptionHead").innerHTML = "Accessibility"

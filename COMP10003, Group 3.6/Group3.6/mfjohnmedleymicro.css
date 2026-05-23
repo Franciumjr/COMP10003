@@ -1,7 +1,18 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital, opsz, wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+ 3:ital,wght@0,200..900;1,200..900&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+  --primary-color-light: #c0dbec;
+  --primary-color-dark: #000F46;
+  --secondary-color-light: #fff7e7;
+  --secondary-color-dark: #1c130d;
+  --tertiary-color-light: #c7eb88;
+  --tertiary-color-dark: #3f4d29;
+  --link-light: #7fa7e0;
+  --link-dark: #5c86c6;
+  --text-area-hover: #c8c8c8;
+  --shadow-color: #333333;
+  --button-light: #03347e;
+}
 
 .container {
     display: flex;
@@ -25,7 +36,7 @@ h1 {
     margin: 0;
     padding: 2vh;
     text-align: center;
-    background-color: rgb(0, 20, 90);
+    background-color: var(--primary-color-dark);
     color: white;
 }
 
@@ -39,30 +50,30 @@ h2 {
     border-width: 5px;
     margin-left: 450px;
     margin-right: 450px;
-    background-color: aliceblue;
+    background-color: var(--primary-color-light);
 
 }
 
 h3 {
     font-size: 25pt;
-    background-color: aliceblue;
+    background-color: var(--primary-color-light);
     text-align: center;
 }
 
 h4 {
-    color: white;
+    color: var(--secondary-color-light);
     text-align: center;
-    background-color: rgb(0, 20, 90);
+    background-color: var(--primary-color-dark);
     padding: 8px;
     margin: 0;
 }
 
-h2, h3, textarea, img, table, button {
+h2, h3, textarea, figure, table, button {
     border: solid;
     border-width: 3px;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 8px;
-    box-shadow: 10px 10px 13px #333333
+    box-shadow: 10px 10px 13px var(--shadow-color)
 }
 
 div {
@@ -70,14 +81,19 @@ div {
 }
 
 img {
-    background-color: aliceblue;
-    padding: 1vw;
-    margin-top: 34px;
+    border-radius: 10px;
+}
+
+
+figure {
+    background-color: var(--primary-color-light);
+    margin: 20px;
+    padding: 15px;
     align-content: center;
     transition: transform 200ms ease-in-out;
 }
 
-img:hover {
+figure:hover {
     transform: scale(1.05);
 }
 
@@ -99,24 +115,25 @@ footer {
     border: solid;
     border-width: 3px;
     border-radius: 10px;
-    box-shadow: 8px 8px 10px #333333
+    box-shadow: 8px 8px 10px var(--shadow-color)
 }
 
 .link {
-    color: rgb(126, 167, 221);
+    color: var(--link-dark);
 }
 .link:hover {
-    color: rgb(179, 210, 233);
+    color: var(--link-light);
 }
 
 table {
     justify-content: center;
-    background-color: white;
+    background-color: var(--secondary-color-light);
 }
 
 td, th {
     width: 200px;
     text-align: center;
+    color: var(--secondary-color-dark);
 }
 
 p, th, td {
@@ -129,24 +146,21 @@ p, th, td {
     margin: 50px;
 }
 
-figure {
-    margin: 0;
-    margin-bottom: 20px;
-}
-
 button {
-  background-color: rgb(0, 20, 90);
+  background-color: var(--primary-color-dark);
   margin: 30px;
-  color: aliceblue;
+  color: var(--primary-color-light);
   border-color: black;
   padding: 10px 20px;
   text-align: center;
   font-size: 14pt;
   cursor: pointer;
+  font-family: "Fraunces", serif;
+  font-style: italic;
   transition: border-width 200ms ease-in-out, background-color 200ms ease-in-out, transform 200ms ease-in-out, font-size 200ms ease-in-out;
 }
 button:hover {
-    background-color: rgb(1, 30, 130);
+    background-color: var(--button-light);
     transform: scale(1.1);
     border-width: 2px;
     font-size: 14.5pt;
@@ -154,7 +168,7 @@ button:hover {
 
 #description {
     opacity: 0%;
-    background-color: #c6e4b0;
+    background-color: var(--tertiary-color-light);
     border: solid;
     border-width: 3px;
     border-radius: 10px;
@@ -162,20 +176,21 @@ button:hover {
     position: absolute;
     left: 1173px;
     top: 376px;
-    z-index: 1;
     width: 210px;
     height: 155px;
+    z-index: 1;
     text-align: center;
     transition: 0.2s;
 }
 
 #descriptionHead {
+    color: var(--tertiary-color-dark);
     background: none;
     font-size: 16pt;
-    color: black;
 }
 
 #descriptionText {
+    color: var(--tertiary-color-dark);
     font-size: 14pt;
 
 }
