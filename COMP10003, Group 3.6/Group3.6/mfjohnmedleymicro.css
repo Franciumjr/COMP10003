@@ -81,7 +81,7 @@ h2, h3, textarea, figure, table, button, .para {
 }
 
 div {
-    margin: 50px;
+    margin: 60px;
 }
 
 img {
@@ -175,7 +175,7 @@ button:hover {
     background-color: var(--tertiary-color-light);
     border: solid;
     border-width: 3px;
-    border-radius: 10px;
+    border-radius: 17px;
     padding: 8px;
     position: absolute;
     left: 1173px;
