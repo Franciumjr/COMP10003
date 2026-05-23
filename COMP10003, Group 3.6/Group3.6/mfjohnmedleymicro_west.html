@@ -5,19 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Medley West Tower</title>
     <link rel="stylesheet" href="./mfjohnmedleymicro.css">
-    <script>
-        function thanks() {             // function to thank users for their comment
-            alert ('Thanks!!')
-            userComment1.value = ""      // resets the text box after the comment is submitted
-            userComment2.value = ""
-        }
-        let img_width = "80%";              // variable to set the width of all images, so they are consistent and easily changeable
-    </script>
+    <script src="micromelbaudio.js"></script>
+    <script src="mfjohnmedley.js"></script>
 </head>
 <body>
     <h1>John Medley West Tower</h1>
 
-    <h2>Microwave #2: West Tower, Lvl 1</h2>
+    <h2>Microwave #2: West Tower Level 1</h2>
 
     <div class="container" name="microwave2">
         <section>
@@ -49,43 +43,45 @@
 
         <section>
             <h3>Overall Rating: 8/10</h3>
-            <table class="container">
+            <table class="container" onmouseleave="descriptionDisappear()">
                 <tr>
                     <th>Category</th>
                     <th>Rating</th>
                 </tr>
                 <tr>
-                    <th>Environment</th>
+                    <th id="environment" onmouseenter="descriptionAppear('environment')">Environment</th>
                     <td>8/10</td>
                 </tr>
                 <tr>
-                    <th>Accessibility</th>
+                    <th id="accessibility" onmouseenter="descriptionAppear('accessibility')">Accessibility</th>
                     <td>8/10</td>
                 </tr>
                 <tr>
-                    <th>Functionality</th>
+                    <th id="functionality" onmouseenter="descriptionAppear('functionality')">Functionality</th>
                     <td>8/10</td>
                 </tr>
                 <tr>
-                    <th>Facilities</th>
+                    <th id="facilities" onmouseenter="descriptionAppear('facilities')">Facilities</th>
                     <td>7/10</td>
                 </tr>
             </table>
+
+            <div id="description">
+                <h4 id="descriptionHead"></h4>
+                <p id="descriptionText"></p>
+            </div>
+
             <h3>Directions</h3>
             <p>From the first stop in this building, go back past the elevator and cross the bridge to the West Tower. Make a left at the end of the corridor, and take the elevator down to floor 1. Exit the elevator and turn right, where you will find the kitchenette.</p>
-            <audio controls>
-                <source src="assets/jm_directions_2.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+            <button onclick="playAudio('assets/jm_directions_2.mp3')">Play Audio</button>
+            <button onclick="stopAudio('assets/jm_directions_2.mp3')">Stop Audio</button>
         
             <h3>Comment from the Authors</h3>
-            <p>If the microwave in the West Tower didn't take your fancy, this one sure will! The most notable improvement are the modern aesthetics of the room, coming with plenty of room. This kitchenette has a wide range of amenities, including a fridge, a toasty maker, and of course, a printer! Who wouldn't have printer in their kitchen?</p>
-            <audio controls>
-                <source src="assets/jm_comment_2.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+            <p>If the microwave in the East Tower didn't take your fancy, this one sure will! The most notable improvement are the modern aesthetics of the room, coming with plenty of room. This kitchenette has a wide range of amenities, including a fridge, a toasty maker, and of course, a printer! Who wouldn't have printer in their kitchen?</p>
+            <button onclick="playAudio('assets/notuntitled2.mp3')">Play Audio</button>
+            <button onclick="stopAudio('assets/notuntitled2.mp3')">Stop Audio</button>
             <h3>Leave your comment!</h3>
-            <textarea type="text" id="userComment2" name="userComment2" cols="58" rows="5" class="container" placeholder="I love it!"></textarea>
+            <textarea type="text" id="userComment" name="userCommentWest" cols="58" rows="5" class="container" placeholder="I love it!"></textarea>
             <br>
             <button onclick="thanks()" id="submit">Submit</button>
         </section>
@@ -95,6 +91,6 @@
         <h4>Return to <a href="index.html" class="link">home page</a></h4>
     </footer>
     <p class="copyright">MicroMelb &#169; 2026</p>
-    <p>Word count: 174</p>
+    <p>Word count: MORE MORE MORE PLS REMEMBER ME</p>
 </body>
 </html>

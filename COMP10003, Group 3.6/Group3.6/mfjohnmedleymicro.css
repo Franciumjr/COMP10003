@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital, opsz, wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+ 3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital, opsz, wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+ 3:ital,wght@0,200..900;1,200..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 .container {
     display: flex;
@@ -9,7 +10,7 @@
 
 body {
     margin: 0;
-    font-family: "Source Sans 3", sans-serif;
+    font-family: "Fraunces", sans-serif;
     background-image: linear-gradient(rgba(151, 151, 151, 0.7), rgba(255, 255, 255, 0.7)), url("assets/jm_background.webp");
     backdrop-filter: blur(5px);
     
@@ -38,6 +39,7 @@ h2 {
     border-width: 5px;
     margin-left: 450px;
     margin-right: 450px;
+    background-color: aliceblue;
 
 }
 
@@ -55,7 +57,7 @@ h4 {
     margin: 0;
 }
 
-h3, textarea, img, table, button {
+h2, h3, textarea, img, table, button {
     border: solid;
     border-width: 3px;
     border-radius: 10px;
@@ -148,5 +150,33 @@ button:hover {
     transform: scale(1.1);
     border-width: 2px;
     font-size: 14.5pt;
+}
+
+#description {
+    opacity: 0%;
+    background-color: #c6e4b0;
+    border: solid;
+    border-width: 3px;
+    border-radius: 10px;
+    padding: 8px;
+    position: absolute;
+    left: 1173px;
+    top: 376px;
+    z-index: 1;
+    width: 210px;
+    height: 155px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+#descriptionHead {
+    background: none;
+    font-size: 16pt;
+    color: black;
+}
+
+#descriptionText {
+    font-size: 14pt;
+
 }
 
