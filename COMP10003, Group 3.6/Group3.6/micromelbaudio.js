@@ -1,32 +1,29 @@
-function playAudio(filename) {
-    audio = new Audio(filename);
+function playAudio(audiofilename) {
+    audio = new Audio(audiofilename);
+    alert("Playing audio " + audiofilename);
     audio.play();
-    alert("Playing audio");
 }
 
-function stopAudio(filename) {
+function stopAudio(audiofilename) {
     audio.pause();
     alert("Stopping audio");
 }
 
-function toggleAudio() {
-    if (document.getElementById("audio-toggle").checked) {
-        localStorage.setItem("autoplay", "true");
-        alert("Autoplay is on");
-    } else {
-        localStorage.setItem("autoplay", "false");
-        alert("Autoplay is off");
-    }
-}
+// function toggleAudio() {
+//     if (document.getElementById("audio-toggle").checked) {
+//         localStorage.setItem("autoplay", "true");
+//         alert("Autoplay is on");
+//     } else {
+//         localStorage.setItem("autoplay", "false");
+//         alert("Autoplay is off");
+//     }
+// }
 
-function autoAudio(filename) {
-    alert("Auto play is " + localStorage.getItem("autoplay"));
-    if (localStorage.getItem("autoplay") == "true") {
-        alert("Autoplay is on, playing audio");
-        playAudio(filename);
-    }
-}
-
-function makeColor(color) {
-    document.getElementById("h1").style.color = color;
-}
+// function autoAudio(audiofilename) {
+//     alert("Auto play is " + localStorage.getItem("autoplay"));
+//     if (localStorage.getItem("autoplay") == "true") {
+//         alert("Autoplay detected");
+//         alert(audiofilename);
+//         playAudio(audiofilename);
+//     }
+// }

@@ -134,11 +134,11 @@ figure {
 
 button {
   background-color: rgb(0, 20, 90);
+  margin: 30px;
   color: aliceblue;
   border-color: black;
   padding: 10px 20px;
   text-align: center;
-  display: inline-block;
   font-size: 14pt;
   cursor: pointer;
   transition: border-width 200ms ease-in-out, background-color 200ms ease-in-out, transform 200ms ease-in-out, font-size 200ms ease-in-out;
