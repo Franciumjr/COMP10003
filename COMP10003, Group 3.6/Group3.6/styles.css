@@ -785,3 +785,10 @@ footer.explanation {
         transform: translateY(0%);
     }
 }
+
+/* Leaflet Popup Square Corners Customization */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    border-radius: 0 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+}
