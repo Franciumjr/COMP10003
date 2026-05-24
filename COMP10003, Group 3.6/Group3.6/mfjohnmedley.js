@@ -3,7 +3,7 @@ function descriptionAppear(id, order, rating) {
     if (order == 'first') {
         document.getElementById("description").style.top = "386px"
     } else {
-        document.getElementById("description").style.top = "2312px"
+        document.getElementById("description").style.top = "2362px"
     }
     if (id == "environment") {
         document.getElementById("descriptionHead").innerHTML = "Environment: " + rating;
