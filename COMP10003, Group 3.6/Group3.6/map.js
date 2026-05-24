@@ -64,7 +64,7 @@ window.addEventListener('scroll', () => {
 // AUDIO CODE
 // ------------------------------------------------------------------
 
-let toggled = false
+/*let toggled = false
 const checkBox = document.getElementById("audio-toggle");
 const toggleText = document.getElementById("toggle-text");
 
@@ -92,7 +92,8 @@ checkBox.addEventListener('change', (event) => {
 //         alert("Autoplay is on, playing audio");
 //         playAudio(filename);
 //     }
-// }
+}
+*/
 
 
 

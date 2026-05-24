@@ -152,7 +152,8 @@ main {
             h1 {
                 width: 50vw;
                 font-size: 44px;
-                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-family: 'Fraunces';
+                font-weight: 400;
                 background: none;
                 text-align: left;
             }
@@ -667,6 +668,7 @@ main.explanation {
 }
 
 .acknowledgement {
+    margin-bottom: 0;
     display: grid;
     grid-template-columns: 2fr 5fr;
     grid-template-rows: auto auto;
