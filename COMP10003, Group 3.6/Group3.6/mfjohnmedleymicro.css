@@ -4,7 +4,7 @@
   --primary-color-light: #c0dbec;
   --primary-color-dark: #000F46;
   --secondary-color-light: #fff7e7;
-  --secondary-color-dark: #1c130d;
+  --secondary-color-dark: #6c412e;
   --tertiary-color-light: #c7eb88;
   --tertiary-color-dark: #3f4d29;
   --link-light: #7fa7e0;
@@ -200,7 +200,7 @@ button:hover {
 #descriptionHead {
     color: var(--tertiary-color-dark);
     background: none;
-    font-size: 16pt;
+    font-size: 14pt;
     margin-bottom: -10px;
 }
 

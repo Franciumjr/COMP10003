@@ -1,4 +1,4 @@
-function descriptionAppear(id, order) {
+function descriptionAppear(id, order, rating) {
     document.getElementById("description").style.opacity = "100%";
     if (order == 'first') {
         document.getElementById("description").style.top = "386px"
@@ -6,19 +6,19 @@ function descriptionAppear(id, order) {
         document.getElementById("description").style.top = "2312px"
     }
     if (id == "environment") {
-        document.getElementById("descriptionHead").innerHTML = "Environment";
+        document.getElementById("descriptionHead").innerHTML = "Environment: " + rating;
         document.getElementById("descriptionText").innerHTML = "The cleanliness and vibe of the surrounding area.";
     }
     if (id == "accessibility") {
-        document.getElementById("descriptionHead").innerHTML = "Accessibility";
+        document.getElementById("descriptionHead").innerHTML = "Accessibility: " + rating;
         document.getElementById("descriptionText").innerHTML = "The ease of access and use of this microwave.";
     }
     if (id == "functionality") {
-        document.getElementById("descriptionHead").innerHTML = "Functionality";
+        document.getElementById("descriptionHead").innerHTML = "Functionality: " + rating;
         document.getElementById("descriptionText").innerHTML = "The versatility of the microwave, and how well it heats your food.";
     }
     if (id == "facilities") {
-        document.getElementById("descriptionHead").innerHTML = "Facilities";
+        document.getElementById("descriptionHead").innerHTML = "Facilities: " + rating;
         document.getElementById("descriptionText").innerHTML = "The amount of additional amenities in the surrounding area.";
     }
 }
