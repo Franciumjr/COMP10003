@@ -3,6 +3,6 @@ function playAudio(audiofilename) {
     audio.play();
 }
 
-function stopAudio(audiofilename) {
+function stopAudio() {
     audio.pause();
 }
