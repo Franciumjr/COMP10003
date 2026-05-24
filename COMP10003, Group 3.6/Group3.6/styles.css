@@ -152,7 +152,8 @@ main {
             h1 {
                 width: 50vw;
                 font-size: 44px;
-                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-family: 'Fraunces';
+                font-weight: 400;
                 background: none;
                 text-align: left;
             }
