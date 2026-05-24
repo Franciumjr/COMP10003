@@ -49,19 +49,19 @@
                     <th>Rating</th>
                 </tr>
                 <tr>
-                    <th id="environment" onmouseenter="descriptionAppear('environment')">Environment</th>
+                    <th id="environment" onmouseenter="descriptionAppear('environment', 'first')">Environment</th>
                     <td>8/10</td>
                 </tr>
                 <tr>
-                    <th id="accessibility" onmouseenter="descriptionAppear('accessibility')">Accessibility</th>
+                    <th id="accessibility" onmouseenter="descriptionAppear('accessibility', 'first')">Accessibility</th>
                     <td>8/10</td>
                 </tr>
                 <tr>
-                    <th id="functionality" onmouseenter="descriptionAppear('functionality')">Functionality</th>
+                    <th id="functionality" onmouseenter="descriptionAppear('functionality', 'first')">Functionality</th>
                     <td>8/10</td>
                 </tr>
                 <tr>
-                    <th id="facilities" onmouseenter="descriptionAppear('facilities')">Facilities</th>
+                    <th id="facilities" onmouseenter="descriptionAppear('facilities', 'first')">Facilities</th>
                     <td>7/10</td>
                 </tr>
             </table>
@@ -81,7 +81,7 @@
             <button onclick="playAudio('assets/notuntitled2.mp3')">Play Audio</button>
             <button onclick="stopAudio('assets/notuntitled2.mp3')">Stop Audio</button>
             <h3>Leave your comment!</h3>
-            <textarea type="text" id="userComment" name="userCommentWest" cols="59" rows="5" class="container" placeholder="I love it!"></textarea>
+            <textarea type="text" id="userComment" name="userCommentWest" cols="55" rows="5" class="container" placeholder="I love it!"></textarea>
             <br>
             <button onclick="thanks()" id="submit">Submit</button>
         </section>

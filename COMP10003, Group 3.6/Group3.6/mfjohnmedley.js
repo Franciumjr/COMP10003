@@ -1,19 +1,24 @@
-function descriptionAppear(id) {
+function descriptionAppear(id, order) {
     document.getElementById("description").style.opacity = "100%";
+    if (order == 'first') {
+        document.getElementById("description").style.top = "386px"
+    } else {
+        document.getElementById("description").style.top = "2312px"
+    }
     if (id == "environment") {
-        document.getElementById("descriptionHead").innerHTML = "Environment"
+        document.getElementById("descriptionHead").innerHTML = "Environment";
         document.getElementById("descriptionText").innerHTML = "The cleanliness and vibe of the surrounding area.";
     }
     if (id == "accessibility") {
-        document.getElementById("descriptionHead").innerHTML = "Accessibility"
+        document.getElementById("descriptionHead").innerHTML = "Accessibility";
         document.getElementById("descriptionText").innerHTML = "The ease of access and use of this microwave.";
     }
     if (id == "functionality") {
-        document.getElementById("descriptionHead").innerHTML = "Functionality"
+        document.getElementById("descriptionHead").innerHTML = "Functionality";
         document.getElementById("descriptionText").innerHTML = "The versatility of the microwave, and how well it heats your food.";
     }
     if (id == "facilities") {
-        document.getElementById("descriptionHead").innerHTML = "Facilities"
+        document.getElementById("descriptionHead").innerHTML = "Facilities";
         document.getElementById("descriptionText").innerHTML = "The amount of additional amenities in the surrounding area.";
     }
 }
@@ -25,4 +30,5 @@ function descriptionDisappear() {
 function thanks() {             // function to thank users for their comment
     alert ('Thanks!!')
     userComment.value = ""      // resets the text box after the comment is submitted
+    userComment2.value = "" 
 }

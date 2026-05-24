@@ -80,6 +80,11 @@ h2, h3, textarea, figure, table, button, .para {
     box-shadow: 10px 10px 13px var(--shadow-color)
 }
 
+textarea {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 14pt;
+}
+
 div {
     margin: 60px;
 }
@@ -125,6 +130,7 @@ footer {
 .link {
     color: var(--link-dark);
 }
+
 .link:hover {
     color: var(--link-light);
 }
@@ -138,10 +144,14 @@ td, th {
     width: 200px;
     text-align: center;
     color: var(--secondary-color-dark);
+    font-size: 14pt;
 }
 
-p, th, td {
-    font-size: 16pt;
+.para {
+    font-size: 14pt;
+    padding: 24px;
+    padding-top: 16px;
+    text-align: justify;
 }
 
 .copyright {
@@ -175,27 +185,28 @@ button:hover {
     background-color: var(--tertiary-color-light);
     border: solid;
     border-width: 3px;
-    border-radius: 17px;
+    border-radius: 12px;
     padding: 8px;
     position: absolute;
     left: 1173px;
-    top: 376px;
-    width: 210px;
-    height: 155px;
+    top: 386px;
+    width: 200px;
+    height: 120px;
     z-index: 1;
     text-align: center;
-    transition: 0.2s;
+    transition: opacity 0.2s ease-in-out;
 }
 
 #descriptionHead {
     color: var(--tertiary-color-dark);
     background: none;
     font-size: 16pt;
+    margin-bottom: -10px;
 }
 
 #descriptionText {
     color: var(--tertiary-color-dark);
-    font-size: 14pt;
+    font-size: 12pt;
 
 }
 
