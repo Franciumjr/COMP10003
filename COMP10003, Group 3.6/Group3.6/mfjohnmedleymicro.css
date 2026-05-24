@@ -75,7 +75,7 @@ h4 {
 h2, h3, textarea, figure, table, button, .para {
     border: solid;
     border-width: 3px;
-    border-radius: 17px;
+    border-radius: 16px;
     padding: 8px;
     box-shadow: 10px 10px 13px var(--shadow-color)
 }
@@ -97,7 +97,8 @@ img {
 figure {
     background-color: var(--primary-color-light);
     margin: 20px;
-    padding: 15px;
+    margin-top: 32px;
+    padding: 16px;
     align-content: center;
     transition: transform 200ms ease-in-out;
 }
