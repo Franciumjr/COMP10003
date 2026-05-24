@@ -667,6 +667,7 @@ main.explanation {
 }
 
 .acknowledgement {
+    margin-bottom: 0;
     display: grid;
     grid-template-columns: 2fr 5fr;
     grid-template-rows: auto auto;
