@@ -64,7 +64,7 @@ window.addEventListener('scroll', () => {
 // AUDIO CODE
 // ------------------------------------------------------------------
 
-let toggled = false;
+/*let toggled = false
 const checkBox = document.getElementById("audio-toggle");
 const toggleText = document.getElementById("toggle-text");
 
@@ -77,6 +77,23 @@ checkBox.addEventListener('change', (event) => {
     }
 })
 
+// function toggleAudio() {
+//     if (document.getElementById("audio-toggle").checked) {
+//         alert("Autoplay is on");
+//         localStorage.setItem("autoPlayVar", "true");
+//     } else {
+//         alert("Autoplay is off");
+//         localStorage.setItem("autoPlayVar", "false");
+//     }
+// }
+
+// function autoAudio(filename) {
+//     if (localStorage.getItem("autoPlayVar") == "true") {
+//         alert("Autoplay is on, playing audio");
+//         playAudio(filename);
+//     }
+}
+*/
 
 
 
@@ -86,7 +103,7 @@ var map = L.map('interactive-map', {
     center: [-37.7983, 144.9610],
     zoom: 16,
     minZoom: 16,
-    maxZoom: 19
+    maxZoom: 18
 });
 
 
@@ -103,7 +120,7 @@ const campusBuildings = [
         link: "GlynDavis.html"
     },
     {
-        name: "Law Buiding",
+        name: "Law Building",
         coords: [-37.8023, 144.9600],
         link: "lawbuilding.html"
     },
@@ -113,19 +130,19 @@ const campusBuildings = [
         link: "233Bouverie (1).html"
     },
     {
-        name: "Student Pavillion",
+        name: "Student Pavilion",
         coords: [-37.7987, 144.9634],
         link: "stops.html"
     },
     {
         name: "John Medley - East Tower",
         coords: [-37.79928, 144.9606],
-        link: "mfjohnmedleymicro.html"
+        link: "mfjohnmedleymicro_east.html"
     },
     {
         name: "John Medley - West Tower",
         coords: [-37.79930, 144.96045],
-        link: "mfjohnmedleymicro.html"
+        link: "mfjohnmedleymicro_west.html"
     },
     {
         name: "Western Edge BioSciences",
@@ -214,13 +231,11 @@ campusBuildings.forEach(bldg => {
         // zoom the map to the selected building
         map.setView(selectedBldg.coords, 18);
         clickedBldgs.push(selectedBldg.name);
-        console.log(clickedBldgs)
 
         console.log(clickedBldgs)
         // Open the popup for the selected building if the marker is saved
         if (selectedBldg.marker) {
             selectedBldg.marker.openPopup();
-            
         }
     }
 })});
@@ -232,12 +247,12 @@ campusBuildings.forEach(bldg => {
         .addTo(map)
         .bindPopup(`
             <div style="text-align: center;">
-            <h3 style="margin: 1rem;">${bldg.name}</h3>
-            <a style="display: flex; justify-content: center; gap: 10px; cursor: pointer; border-radius: 4px; border: none; padding: .5rem; background: #abc2a7;" target="_blank" href="./${bldg.link}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg>
-                <button style="cursor: pointer; border: none; background: none;">Visit</button>
+            <h3 style="margin: 0.5rem 0 0.5rem 0; font-family: 'Fraunces', serif; font-weight: 400; font-size: 1.15rem; color: #000F46;">${bldg.name}</h3>
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 0.5rem 0;" />
+            <a style="display: flex; justify-content: center; align-items: center; gap: 8px; cursor: pointer; border-radius: 0px; border: none; padding: 0.5rem; background: #46C8F0;" target="_blank" href="./${bldg.link}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <button style="cursor: pointer; border: none; background: none; font-family: 'Source Sans 3', sans-serif; font-weight: bold; font-size: 0.95rem;">Visit</button>
             </a>
-
             </div>
         `);
 })

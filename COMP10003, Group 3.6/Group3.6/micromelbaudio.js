@@ -1,10 +1,8 @@
-function playAudio(filename) {
-    let audio = new Audio(filename);
+function playAudio(audiofilename) {
+    audio = new Audio(audiofilename);
     audio.play();
 }
 
-function autoAudio(autoPlay, filename) {
-    if (autoPlay.checked) {
-        playAudio(filename);
-    }
+function stopAudio() {
+    audio.pause();
 }

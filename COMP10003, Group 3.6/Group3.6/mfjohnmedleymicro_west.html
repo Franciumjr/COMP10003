@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Medley West Tower</title>
+    <link rel="stylesheet" href="./mfjohnmedleymicro.css">
+    <script src="micromelbaudio.js"></script>
+    <script src="mfjohnmedley.js"></script>
+</head>
+<body>
+    <h1>John Medley West Tower</h1>
+
+    <h2>Microwave #2: West Tower Level 1</h2>
+
+    <div class="container" name="microwave2">
+        <section>
+            <figure>
+                <img src="assets/jm_westtower_micro_1.jpg" width="100%">
+            </figure>
+            <figcaption>
+                Outside the kitchenette.
+            </figcaption>
+            <figure>
+                <img src="assets/jm_westtower_micro_2.jpg" width="100%">
+            </figure>
+            <figcaption>
+                Microwave and surrounding amenities.
+            </figcaption>
+            <figure>
+                <img src="assets/jm_westtower_micro_3.jpg" width="100%">
+            </figure>
+            <figcaption>
+                Fridge and printer (wow!!).
+            </figcaption>
+            <figure>
+                <img src="assets/jm_westtower_micro_4.jpg" width="100%">
+            </figure>
+            <figcaption>
+                Inside the microwave and controls.
+            </figcaption>
+        </section>
+
+        <section>
+            <h3>Overall Rating: 8/10</h3>
+            <table class="container" onmouseleave="descriptionDisappear()">
+                <tr>
+                    <th>Category</th>
+                    <th>Rating</th>
+                </tr>
+                <tr>
+                    <th id="environment" onmouseenter="descriptionAppear('environment', 'first', '8/10')">Environment</th>
+                    <td>8/10</td>
+                </tr>
+                <tr>
+                    <th id="accessibility" onmouseenter="descriptionAppear('accessibility', 'first', '8/10')">Accessibility</th>
+                    <td>8/10</td>
+                </tr>
+                <tr>
+                    <th id="functionality" onmouseenter="descriptionAppear('functionality', 'first', '8/10')">Functionality</th>
+                    <td>8/10</td>
+                </tr>
+                <tr>
+                    <th id="facilities" onmouseenter="descriptionAppear('facilities', 'first', '7/10')">Facilities</th>
+                    <td>7/10</td>
+                </tr>
+            </table>
+
+            <div id="description">
+                <h4 id="descriptionHead"></h4>
+                <p id="descriptionText"></p>
+            </div>
+
+            <h3>Directions</h3>
+            <p class="para">From the first stop in this building, go back past the elevator and cross the bridge to the West Tower. Make a left at the end of the corridor, and take the elevator down to floor 1. Exit the elevator and turn right, where you will find the kitchenette.</p>
+            <button onclick="playAudio('assets/jm_directions_2.mp3')">Play Audio</button>
+            <button onclick="stopAudio()">Stop Audio</button>
+        
+            <h3>Comment from the Authors</h3>
+            <p class="para">If the microwave in the East Tower didn't take your fancy, then this one sure will! The most notable improvement is the modern aesthetic of the room, coming with plenty of space. This kitchenette has a wide range of amenities, including a fridge, a toasty maker, and of course, a printer! Who wouldn't have printer in their kitchen?</p>
+            <button onclick="playAudio('assets/notuntitled2.mp3')">Play Audio</button>
+            <button onclick="stopAudio()">Stop Audio</button>
+            <h3>Leave your comment!</h3>
+            <textarea type="text" id="userComment" name="userCommentWest" cols="55" rows="5" class="container" placeholder="I love it!"></textarea>
+            <br>
+            <button onclick="thanks()" id="submit">Submit</button>
+        </section>
+    </div>
+
+    <footer>
+        <h4>Return to <a href="index.html" class="link">home page</a></h4>
+    </footer>
+    <p class="copyright">MicroMelb &#169; 2026</p>
+    <p>Word count: MORE MORE MORE PLS REMEMBER ME</p>
+</body>
+</html>
