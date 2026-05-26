@@ -169,10 +169,6 @@ map.on('drag', function () {
 });
 
 
-// Distance Calculator
-let clickedBldgs = [];
-let markers = [];
-let polyline = null;
 
 // render individual buildings on dropdown menu
 
@@ -256,6 +252,69 @@ campusBuildings.forEach(bldg => {
             </div>
         `);
 })
+
+// DISTANCE CALCULATOR
+// ------------------------------------------------------------------
+
+function toRad(deg) { return deg * Math.PI / 180; }
+
+function haversineDistance(coords1, coords2) {
+    const R = 6371000;
+    const dLat = toRad(coords2[0] - coords1[0]);
+    const dLon = toRad(coords2[1] - coords1[1]);
+    const a =
+        Math.sin(dLat / 2) ** 2 +
+        Math.cos(toRad(coords1[0])) * Math.cos(toRad(coords2[0])) *
+        Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function formatTime(seconds) {
+    if (seconds < 60) return `${seconds}s`;
+    return `${Math.round(seconds / 60)} min`;
+}
+
+function calculateAndDisplay() {
+    const startName = startdropdown.value;
+    const endName   = enddropdown.value;
+
+    const startBldg = campusBuildings.find(b => b.name === startName);
+    const endBldg   = campusBuildings.find(b => b.name === endName);
+
+    const resultBox = document.getElementById("distance-result");
+
+    if (!startBldg || !endBldg) {
+        resultBox.innerHTML = "<p>Please select both a start and end building.</p>";
+        return;
+    }
+    if (startBldg.name === endBldg.name) {
+        resultBox.innerHTML = "<p>Please select two different buildings.</p>";
+        return;
+    }
+
+    const dist   = haversineDistance(startBldg.coords, endBldg.coords);
+    const distM  = Math.round(dist);
+    const distKm = (dist / 1000).toFixed(2);
+
+    const slowMin = formatTime(Math.round(dist / 0.9));
+    const avgMin  = formatTime(Math.round(dist / 1.4));
+    const fastMin = formatTime(Math.round(dist / 2.0));
+
+    resultBox.innerHTML = `
+        <p><strong>Distance:</strong> ${distM}m (${distKm}km)</p>
+        <p><strong>Route:</strong> ${startBldg.name} → ${endBldg.name}</p>
+        <table>
+            <tr><th>Pace</th><th>Speed</th><th>Time</th></tr>
+            <tr><td>Leisurely</td><td>3.2 km/h</td><td>${slowMin}</td></tr>
+            <tr><td>Average</td><td>5.0 km/h</td><td>${avgMin}</td></tr>
+            <tr><td>Brisk</td><td>7.2 km/h</td><td>${fastMin}</td></tr>
+        </table>
+    `;
+
+    map.fitBounds([startBldg.coords, endBldg.coords], { padding: [40, 40] });
+}
+
+document.querySelector('.btn').addEventListener('click', calculateAndDisplay);
 
 
 
