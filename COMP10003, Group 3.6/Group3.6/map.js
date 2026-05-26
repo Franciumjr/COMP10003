@@ -314,7 +314,7 @@ function calculateAndDisplay() {
     map.fitBounds([startBldg.coords, endBldg.coords], { padding: [40, 40] });
 }
 
-document.querySelector('.btn').addEventListener('click', calculateAndDisplay);
+document.querySelector('.btncalc').addEventListener('click', calculateAndDisplay);
 
 
 

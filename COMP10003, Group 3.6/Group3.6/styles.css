@@ -191,9 +191,9 @@ main {
         background-color: white;
 
         h1 {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: "Fraunces";
             font-size: 44px;
-            font-weight: 600;
+            font-weight: 400;
             color: #000e46;
             margin: 2rem;
         }
