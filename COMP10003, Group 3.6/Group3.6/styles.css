@@ -191,9 +191,9 @@ main {
         background-color: white;
 
         h1 {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: "Fraunces";
             font-size: 44px;
-            font-weight: 600;
+            font-weight: 400;
             color: #000e46;
             margin: 2rem;
         }
@@ -784,4 +784,11 @@ footer.explanation {
         opacity: 1;
         transform: translateY(0%);
     }
+}
+
+/* Leaflet Popup Square Corners Customization */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    border-radius: 0 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
 }

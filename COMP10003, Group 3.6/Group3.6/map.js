@@ -169,10 +169,6 @@ map.on('drag', function () {
 });
 
 
-// Distance Calculator
-let clickedBldgs = [];
-let markers = [];
-let polyline = null;
 
 // render individual buildings on dropdown menu
 
@@ -247,15 +243,78 @@ campusBuildings.forEach(bldg => {
         .addTo(map)
         .bindPopup(`
             <div style="text-align: center;">
-            <h3 style="margin: 1rem;">${bldg.name}</h3>
-            <a style="display: flex;  justify-content: center; gap: 10px; cursor: pointer; border-radius: 4px; border: none; padding: .5rem; background: #46C8F0;" target="_blank" href="./${bldg.link}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                <button style="cursor: pointer; border: none; background: none;">Visit</button>
+            <h3 style="margin: 0.5rem 0 0.5rem 0; font-family: 'Fraunces', serif; font-weight: 400; font-size: 1.15rem; color: #000F46;">${bldg.name}</h3>
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 0.5rem 0;" />
+            <a style="display: flex; justify-content: center; align-items: center; gap: 8px; cursor: pointer; border-radius: 0px; border: none; padding: 0.5rem; background: #46C8F0;" target="_blank" href="./${bldg.link}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <button style="cursor: pointer; border: none; background: none; font-family: 'Source Sans 3', sans-serif; font-weight: bold; font-size: 0.95rem;">Visit</button>
             </a>
-
             </div>
         `);
 })
+
+// DISTANCE CALCULATOR
+// ------------------------------------------------------------------
+
+function toRad(deg) { return deg * Math.PI / 180; }
+
+function haversineDistance(coords1, coords2) {
+    const R = 6371000;
+    const dLat = toRad(coords2[0] - coords1[0]);
+    const dLon = toRad(coords2[1] - coords1[1]);
+    const a =
+        Math.sin(dLat / 2) ** 2 +
+        Math.cos(toRad(coords1[0])) * Math.cos(toRad(coords2[0])) *
+        Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function formatTime(seconds) {
+    if (seconds < 60) return `${seconds}s`;
+    return `${Math.round(seconds / 60)} min`;
+}
+
+function calculateAndDisplay() {
+    const startName = startdropdown.value;
+    const endName   = enddropdown.value;
+
+    const startBldg = campusBuildings.find(b => b.name === startName);
+    const endBldg   = campusBuildings.find(b => b.name === endName);
+
+    const resultBox = document.getElementById("distance-result");
+
+    if (!startBldg || !endBldg) {
+        resultBox.innerHTML = "<p>Please select both a start and end building.</p>";
+        return;
+    }
+    if (startBldg.name === endBldg.name) {
+        resultBox.innerHTML = "<p>Please select two different buildings.</p>";
+        return;
+    }
+
+    const dist   = haversineDistance(startBldg.coords, endBldg.coords);
+    const distM  = Math.round(dist);
+    const distKm = (dist / 1000).toFixed(2);
+
+    const slowMin = formatTime(Math.round(dist / 0.9));
+    const avgMin  = formatTime(Math.round(dist / 1.4));
+    const fastMin = formatTime(Math.round(dist / 2.0));
+
+    resultBox.innerHTML = `
+        <p><strong>Distance:</strong> ${distM}m (${distKm}km)</p>
+        <p><strong>Route:</strong> ${startBldg.name} → ${endBldg.name}</p>
+        <table>
+            <tr><th>Pace</th><th>Speed</th><th>Time</th></tr>
+            <tr><td>Leisurely</td><td>3.2 km/h</td><td>${slowMin}</td></tr>
+            <tr><td>Average</td><td>5.0 km/h</td><td>${avgMin}</td></tr>
+            <tr><td>Brisk</td><td>7.2 km/h</td><td>${fastMin}</td></tr>
+        </table>
+    `;
+
+    map.fitBounds([startBldg.coords, endBldg.coords], { padding: [40, 40] });
+}
+
+document.querySelector('.btncalc').addEventListener('click', calculateAndDisplay);
 
 
 
