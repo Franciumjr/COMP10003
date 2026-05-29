@@ -93,9 +93,8 @@ header {
         display: flex;
         justify-content: end;
         align-items: center;
-        gap: 2rem;
+        gap: 1rem;
         padding: 0.5rem 2rem;
-        width: 50rem;
     }
     .vl {
         border-left: 1px solid white;
@@ -166,7 +165,7 @@ header {
         }
     
     h1 {
-        font-weight: 400;
+        font-weight: 300;
     }
     
     p {
