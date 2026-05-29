@@ -1,39 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
 }
-    h1{
-    font-family: "Fraunces", serif;
-    font-weight: 600;
-}
+
 h1 {
-    font-size: 44px;
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: 36px;
     background: none;
     margin-bottom: 1rem;
 }
 h2 {
-    font-family: "Source Sans 3", sans-serif;
-    font-size: 36px;
+    font-family: "Fraunces", serif;
+    font-size: 24px;
     margin-bottom: 1rem;
     font-weight: 600;
 }
+
 p {
     font-family: "Source Sans 3", sans-serif;
     font-weight: 400;
     font-size: larger;
 }
-span {
-    font-family: "Source Sans 3", sans-serif;
-    font-weight: 400;
-}
-a {
 
-    color: black;
+a {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: start;
+    color: white;
     font-size: 22px;
     text-decoration: none;
+}
+
+.container {
+    margin: 0 2em 0 2em;
 }
 .header-break {
     height: 2vh;
@@ -43,6 +49,7 @@ a {
 }
 
 header {
+    
     margin-bottom: 0;
     color: white;
     background-color: #000F46;
@@ -101,9 +108,9 @@ header {
 
         a {
             color: white;
-            font-size: 1rem;
             text-decoration: none;
-
+            font-family: "Source Sans 3", sans-serif;
+            font-size: 1rem;
             &:hover {
                 color: #d4e5d2;
                 text-decoration: underline;
@@ -130,116 +137,122 @@ header {
         }
     }
 }
+
 main {
-    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-     .container {
+
+    .container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-     }
-    
-    
-
-}
-.wrapper {
-        display: flex;
-         flex-direction: row;
-         justify-content: center;
-         align-items: center;
-         gap: 10vw;
-
-    
-}
-
-.title {
-        color: black    ;
-        padding: 1rem;
-        text-align: center;
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        align-items: center;
-        animation-name: slideUpAnimation;
-    animation-duration: 0.7s;
-    animation-delay: 0.4s;
     }
 
 
-.img-wrapper {
+
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+}
+
+.title {
+    color: black;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
     animation-name: slideUpAnimation;
     animation-duration: 0.7s;
     animation-delay: 0.4s;
-    margin-left: 24px;
 }
+
+
+.slider-wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 48rem;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 0.5rem;
+    scrollbar-width: none;
+}
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+.slider-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+}
+.slider-nav a {
+    display: inline-block;
+    width: .5rem;
+    height: .5rem;
+    background-color: #fff;
+    opacity: 0.7;
+    transition: opacity ease 250ms;
+    border-radius: 50%;
+    cursor: pointer;
+    scroll-snap-align: start;
+    
+}
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+.slider nav button {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    border: none;
+    background-color: #cdcdcd;
+    cursor: pointer;
+    scroll-snap-align: start;
+}
+
 .cards-wrapper {
-        display: flex;
-         gap: 20px;
-         padding: 8rem 4rem;
-         background-color: rgb(242, 242, 242);
-         border: 1px solid #c0c0c0;
-         border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    padding: 8rem 4rem;
+    background-color: rgb(242, 242, 242);
+    border: 1px solid #c0c0c0;
+    border-radius: 8px;
 }
-.card-1, .card-2, .card3 {
+
+.card-1,
+.card-2,
+.card3 {
     animation-name: slideUpAnimation;
     animation-duration: 0.7s;
     animation-delay: 0.6s;
-    
-}
 
-.rating-details {
-    margin-top: 1.5rem;
-    display: grid;
-    gap: 1rem;
-    padding: 1rem;
-    background: #f9f9ff;
-    border: 1px solid #d8d8e8;
-    border-radius: 10px;
 }
-
-.rating-details p {
-    font-size: 1rem;
-    color: #333;
-}
-
-.rating-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.rating-row span {
-    min-width: 150px;
-    font-weight: 600;
-    color: #111;
-}
-
-.stars {
-    display: inline-flex;
-    direction: rtl;
-    gap: 0.25rem;
-}
-
-.stars input {
-    display: none;
-}
-
-.stars label {
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #c0c0c0;
-    transition: color 0.2s ease;
-}
-
-.stars input:checked + label,
-.stars input:checked + label ~ label,
-.stars label:hover,
-.stars label:hover ~ label {
-    color: #ffc107;
+.carousel-title {
+    text-align: center;
+    margin-top: 24vh;
 }
 
 .carousel {
@@ -280,15 +293,22 @@ main {
 }
 
 
-iframe {
-    margin-top: 50vh;
+.location {
+    margin: 24vh 0 18vh 0;
+    text-align: center;
+    width: 100vw;
+
+    iframe {
+        width: 80vw;
+        margin: 0 auto;
+        border-radius: ;
+    }
 }
 
 footer {
-    margin-top: 24vh;
     font-family: "Source Sans 3", sans-serif;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 400;
     color: white;
     background-color: #000F46;
     border-top: solid 1.5px #212e5d;
@@ -340,6 +360,7 @@ footer {
     padding-right: 10rem;
 
     h3 {
+        overflow: hidden;
         grid-column: 1;
         grid-row: 1;
         font-size: 1rem;
@@ -369,8 +390,6 @@ footer {
 }
 
 /** Animation**/
-
-
 @keyframes slideUpAnimation {
     0% {
         transform: translateY(100px);
