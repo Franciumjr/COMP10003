@@ -120,6 +120,20 @@ header {
     .header-empty {
         border-bottom: 1.5px solid #212e5d;
         background: #000b34;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        p {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 2rem;
+            color: #abc2a7;
+            font-weight: 200;
+            text-decoration: none;
+            width: 100%;
+        }
     }
 
     nav {
@@ -306,6 +320,7 @@ main {
 }
 
 .interactive {
+    font-family: "Source Sans 3", sans-serif;
     margin-bottom: 24vh;
     text-align: left;
     display: flex;
