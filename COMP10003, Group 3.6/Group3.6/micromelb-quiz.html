@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body{
+        height: 100%;
+    }
+
+    body{   
+        justify-content: center;
+        margin: 0;
+        font-family: 'Fraunces';
+        background-image: url('assets/233Bouverie.png');
+        backdrop-filter: blur(3px);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        }
+    
+    ul{
+        padding-left: 20px;
+    }
+
+    nav{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        color: white;
+        background-color: #000F46;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo{
+        width: 6%;
+        align-items: center;
+        justify-content: center;
+        padding-right: 2%;
+        padding-top: 1px;
+    }
+
+    .MainHeading{
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    div{
+        justify-content: center;
+        text-align: center;
+    }
+
+    div > p{
+        font-weight: 500;
+        text-align: center;
+        font-family: "Source Sans 3", sans-serif;
+    }
+
+    p{
+        font-family: "Source Sans 3", sans-serif;
+    }
+
+    ul{
+        background-color: lightgrey;
+        font-family: "Source Sans 3", sans-serif;
+    }
+
+    li{
+        font-family: "Source Sans 3", sans-serif;
+    }
+
+    .card{
+        background-color: white;
+        border: 2px solid #000F46;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .quizCard{
+        background-color: white;
+        border: 2px solid #000F46;
+        padding: 10px;
+        margin: 10px;
+        min-width: 320px;
+    }
+
+    .photoCard{
+        background-color: white;
+        border: 2px solid #000F46;
+        padding: 10px;
+        margin: 10px;
+        min-width: 260px;
+    }
+
+    .input{
+        text-align: left;
+        border: none;
+        padding: 10px;
+        margin: 10px;
+        padding-top: 10%;
+    }
+
+    .mainContent{
+        flex: 1;
+    }
+
+    footer{
+        display: flex;
+        background-color: #000F46;
+        color: white;
+        align-items: center;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .footerLogo{
+        width: 8%;
+        padding-right: 2%;
+    }
+
+    .footerText{
+        flex: 1;
+        text-align: center;
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 14px;
+    }
+    
+    .text{
+        text-align: center;
+        background-color: white;
+        font-weight: 700;
+        font-size: medium;
+    }
+
+    .link{
+        color: white;
+    }
+
+    .questionText{
+        font-family: "Source Sans 3", sans-serif;
+        font-size: medium;
+        font-weight: 600;
+        text-align: left;
+        padding: 8px 0px;
+    }
+
+    .optionBtn{
+        display: block;
+        width: 100%;
+        text-align: left;
+        background-color: white;
+        border: 2px solid #000F46;
+        padding: 8px 10px;
+        margin: 5px 0px;
+        font-family: "Source Sans 3", sans-serif;
+        font-size: small;
+        cursor: pointer;
+    }
+
+    .optionBtn:hover{
+        background-color: #e8e8f0;
+    }
+
+    .optionBtn.correct{
+        background-color: #c8f0c8;
+        border-color: green;
+    }
+
+    .optionBtn.wrong{
+        background-color: #f0c8c8;
+        border-color: red;
+    }
+
+    .nextBtn{
+        background-color: #000F46;
+        color: white;
+        border: 2px solid #000F46;
+        padding: 8px 20px;
+        margin-top: 10px;
+        font-family: "Source Sans 3", sans-serif;
+        font-size: small;
+        font-weight: 600;
+        cursor: pointer;
+        float: right;
+    }
+
+    .nextBtn:hover{
+        background-color: #000b34;
+    }
+
+    .feedbackText{
+        font-family: "Source Sans 3", sans-serif;
+        font-size: small;
+        font-weight: 500;
+        text-align: left;
+        padding: 6px 0px;
+    }
+
+    .counter{
+        font-family: "Source Sans 3", sans-serif;
+        font-size: small;
+        font-weight: 500;
+        color: #555;
+        text-align: left;
+        padding-bottom: 4px;
+    }
+
+    .Overall{
+        font-weight: 600;
+        font-size: x-large;
+    }
+
+    .resultCard{
+        background-color: white;
+        border: 2px solid #000F46;
+        padding: 20px;
+        margin: 10px;
+        text-align: center;
+    }
+
+    .retryBtn{
+        background-color: #000F46;
+        color: white;
+        border: 2px solid #000F46;
+        padding: 8px 20px;
+        margin-top: 10px;
+        font-family: "Source Sans 3", sans-serif;
+        font-size: small;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .retryBtn:hover{
+        background-color: #000b34;
+    }
+
+</style>
+</head>
+<body>
+    <nav>
+        <img src="assets/logo.png" alt="logo" class="logo"> </img>
+        <section>
+            <h1 class="MainHeading" style="text-align: center;">MicroMelb Quiz</h1>
+        </section>
+    </nav>
+
+    <section class="mainContent" style="display: flex; align-items: flex-start;">
+
+        <div class="quizCard" id="quizSection">
+            <h1 id="buildingHeading" style="text-align: left; font-size: large;">Current Building</h1>
+            <br>
+
+            <div id="questionScreen">
+                <p class="counter" id="counter">Question 1 of 9</p>
+                <p class="questionText" id="questionText">Loading...</p>
+
+                <ul style="background-color: white; padding-left: 0px;" id="optionsList"></ul>
+
+                <p class="feedbackText" id="feedbackText"></p>
+
+                <button class="nextBtn" id="nextBtn" style="display: none;" onclick="nextQuestion()">NEXT</button>
+                <div style="clear: both;"></div>
+            </div>
+
+            <div id="resultScreen" style="display: none;">
+                <br>
+                <p class="questionText" style="text-align: center;">Quiz Complete!</p>
+                <br>
+                <p class="counter" id="scoreText">You scored 0 out of 9</p>
+                <br>
+                <p class="Overall" id="scorePercent">0%</p>
+                <br>
+                <p class="feedbackText" id="resultMessage"></p>
+                <br>
+                <button class="retryBtn" onclick="restartQuiz()">Try Again</button>
+            </div>
+        </div>
+
+        <div class="photoCard">
+            <img id="buildingPhoto" src="assets/233photo.jpeg" alt="photo of building" width="280px">
+            <p id="buildingCaption" style="font-size: small; padding-top: 5px;">233 Bouverie Street Kitchenette</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <img src="logo.png" alt="University of Melbourne" class="footerLogo">
+        <div class="footerText">
+           <p><a class="link" href="index.html">MicroMelb</a> © 2026. <em>All Rights Reserved.</em></p>
+        </div>
+    </footer>
+
+<script>
+    var questions = [
+        {
+            building: "233 Bouverie Street",
+            photo: "assets/233photo.jpeg",
+            caption: "233 Bouverie Street Kitchenette",
+            text: "Approximately how far is 233 Bouverie Street from Stop 1?",
+            options: ["50 metres", "100 metres", "200 metres", "500 metres"],
+            correct: 2,
+
+        },
+        {
+            building: "233 Bouverie Street",
+            photo: "assets/233photo.jpeg",
+            caption: "233 Bouverie Street Kitchenette",
+            text: "Which direction do you turn after passing the museum inside 233 Bouverie?",
+            options: ["Left", "Right", "Straight ahead", "Back towards the entrance"],
+            correct: 1,
+        },
+        {
+            building: "Glyn Davis Building",
+            photo: "assets/glyndavis.png",
+            caption: "Glyn Davis Building",
+            text: "What floor is the Glyn Davis kitchenette located on?",
+            options: ["Ground floor", "Level 1", "Level 2", "Level 3"],
+            correct: 2,
+        },
+        {
+            building: "Glyn Davis Building",
+            photo: "assets/glyndavis.png",
+            caption: "Glyn Davis Building",
+            text: "How many microwaves are in the Glyn Davis kitchenette?",
+            options: ["1", "2", "3", "4"],
+            correct: 1,
+        },
+        {
+            building: "MSD Building",
+            photo: "assets/MSDlevel2.jpg",
+            caption: "MSD Building — Level 2",
+            text: "After what time are MSD Level 3 and 4 microwaves restricted to most students?",
+            options: ["4:00 PM", "5:00 PM", "6:00 PM", "8:00 PM"],
+            correct: 2,
+        },
+        {
+            building: "MSD Building",
+            photo: "assets/MSDlevel2.jpg",
+            caption: "MSD Building — Level 2",
+            text: "On Level 2 of the MSD building, which side of the building are the microwaves on?",
+            options: ["West side (back)", "North side", "East side (front)", "Centre atrium"],
+            correct: 2,
+        },
+        {
+            building: "Student Pavillion (Bldg. 162)",
+            photo: "assets/studentpavicon.png",
+            caption: "Student Pavillion, Building 162",
+            text: "On which floor of the Student Pavillion is the Reheat Station (402) located?",
+            options: ["2nd floor", "3rd floor", "4th (top) floor", "Ground floor"],
+            correct: 2,
+        },
+        {
+            building: "Student Pavillion (Bldg. 162)",
+            photo: "assets/studentpavicon.png",
+            caption: "Student Pavillion, Building 162",
+            text: "Which entrance should you use when heading to the Student Pavillion microwave?",
+            options: ["Northern entrance", "Eastern entrance", "Southern entrance", "Western entrance"],
+            correct: 2,
+        },
+        {
+            building: "General Knowledge",
+            photo: "assets/kwongleedow-building.jpg",
+            caption: "Kwong Lee Dow Building",
+            text: "What overall rating did the 233 Bouverie kitchenette receive?",
+            options: ["5.5/10", "6.4/10", "7.2/10", "8.0/10"],
+            correct: 1,
+        }
+    ];
+
+    var currentIdx = 0;
+    var score = 0;
+    var answered = false;
+
+    function loadQuestion() {
+        answered = false;
+        var q = questions[currentIdx];
+
+        document.getElementById('buildingHeading').textContent = q.building;
+        document.getElementById('buildingPhoto').src = q.photo;
+        document.getElementById('buildingCaption').textContent = q.caption;
+        document.getElementById('counter').textContent = 'Question ' + (currentIdx + 1) + ' of ' + questions.length;
+        document.getElementById('questionText').textContent = q.text;
+        document.getElementById('feedbackText').textContent = '';
+        document.getElementById('nextBtn').style.display = 'none';
+
+        var list = document.getElementById('optionsList');
+        list.innerHTML = '';
+        for (var i = 0; i < q.options.length; i++) {
+            var btn = document.createElement('button');
+            btn.className = 'optionBtn';
+            btn.textContent = q.options[i];
+            btn.setAttribute('data-index', i);
+            btn.onclick = function() { selectAnswer(parseInt(this.getAttribute('data-index'))); };
+            list.appendChild(btn);
+        }
+    }
+
+    function selectAnswer(idx) {
+        if (answered) return;
+        answered = true;
+
+        var q = questions[currentIdx];
+        var btns = document.querySelectorAll('.optionBtn');
+        var feedback = document.getElementById('feedbackText');
+
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].disabled = true;
+            if (i === q.correct) {
+                btns[i].className = 'optionBtn correct';
+            } else if (i === idx) {
+                btns[i].className = 'optionBtn wrong';
+            }
+        }
+
+        if (idx === q.correct) {
+            score++;
+            feedback.style.color = 'green';
+            feedback.textContent = 'Correct! ';
+        } else {
+            feedback.style.color = 'red';
+            feedback.textContent = 'Incorrect';
+        }
+
+        var nextBtn = document.getElementById('nextBtn');
+        nextBtn.style.display = 'inline-block';
+        if (currentIdx + 1 >= questions.length) {
+            nextBtn.textContent = 'SEE RESULTS';
+        } else {
+            nextBtn.textContent = 'NEXT';
+        }
+    }
+
+    function nextQuestion() {
+        currentIdx++;
+        if (currentIdx >= questions.length) {
+            showResult();
+        } else {
+            loadQuestion();
+        }
+    }
+
+    function showResult() {
+        document.getElementById('questionScreen').style.display = 'none';
+        document.getElementById('resultScreen').style.display = 'block';
+
+        var pct = Math.round((score / questions.length) * 100);
+        document.getElementById('scoreText').textContent = 'You scored ' + score + ' out of ' + questions.length;
+        document.getElementById('scorePercent').textContent = pct + '%';
+
+        var msg;
+        if (pct === 100) {
+            msg = 'Perfect score! You know every microwave on campus!';
+        } else if (pct >= 70) {
+            msg = 'Well done! You know your way around campus pretty well.';
+        } else if (pct >= 40) {
+            msg = 'Not bad! A few more microwave visits might help.';
+        } else {
+            msg = 'Keep exploring! There is a lot to discover on campus.';
+        }
+        document.getElementById('resultMessage').textContent = msg;
+
+        document.getElementById('buildingHeading').textContent = 'Quiz Complete!';
+        document.getElementById('buildingPhoto').src = 'assets/unimelb.png';
+        document.getElementById('buildingCaption').textContent = 'MicroMelb Campus Tour';
+    }
+
+    function restartQuiz() {
+        currentIdx = 0;
+        score = 0;
+        document.getElementById('questionScreen').style.display = 'block';
+        document.getElementById('resultScreen').style.display = 'none';
+        loadQuestion();
+    }
+
+    loadQuestion();
+</script>
+
+</body>

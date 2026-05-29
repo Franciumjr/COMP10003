@@ -24,16 +24,12 @@ a {
 }
 h1, h2 {
     font-family: "Fraunces";
-    font-weight: 600;
+    font-weight: 300;
 }
 
 
-.header-break {
-    height: 2vh;
-    background-color: #000b34;
-    border-bottom: solid 1.5px #212e5d;
-    width: 100%;
-}
+
+
 header {
     
     margin-bottom: 0;
@@ -94,9 +90,9 @@ header {
 
         a {
             color: white;
-            font-size: 1rem;
             text-decoration: none;
-
+            font-family: "Source Sans 3", sans-serif;
+            font-size: 1rem;
             &:hover {
                 color: #d4e5d2;
                 text-decoration: underline;
@@ -165,7 +161,7 @@ main {
         align-items: center;
         gap: 20px;
         padding: 8rem 4rem;
-        background-color: rgb(242, 242, 242);
+        background: #f4f4f4;
         border: 1px solid #c0c0c0;
         border-radius: 8px;
         animation-name: slideUpAnimation;
@@ -184,10 +180,13 @@ main {
         gap: 20px;
         
     }
-
+    hr {
+        width: 100%;
+        border-color: #000F46;
+    }
     button {
-        background-color:  #ABC1A7;
-        border: none;
+        border: 1px solid #8087A2;
+        background-color:  #46C8F0;
         padding: 1rem 2rem ;
         transition: all 0.3s ease;
         display: flex;
@@ -196,7 +195,7 @@ main {
         align-items: center;
     }
     button:hover {
-        background-color: #D5E0D3;
+        background-color: #A3E4F7;
         cursor: pointer;
     }
 

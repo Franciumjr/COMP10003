@@ -104,17 +104,39 @@ header {
     gap: 1rem;
     padding: .5rem;
     border-bottom: solid 1.5px #212e5d;
-
+    
+    a {
+            color: white;
+            text-decoration: none;
+            font-family: "Source Sans 3", sans-serif;
+            font-size: 1rem;
+            &:hover {
+                color: #d4e5d2;
+                text-decoration: underline;
+            }
+        }
+    
     h1 {
-        font-weight: medium;
+        font-weight: 400;
     }
-
+    
+    
     p {
         font-family: "Source Sans 3";
         font-weight: 300;
     }
+    
 }
-
+nav {
+       min-height: 100%;
+        border-left: 1.5px solid  #404B74;
+        ul {
+            li{
+                
+                list-style-type: none;
+            }
+        }
+    }
 main {
     background-color: white;
 
