@@ -132,7 +132,7 @@ const campusBuildings = [
     {
         name: "Student Pavilion",
         coords: [-37.7987, 144.9634],
-        link: "stops.html"
+        link: "studentpav.html"
     },
     {
         name: "John Medley - East Tower",
@@ -147,12 +147,12 @@ const campusBuildings = [
     {
         name: "Western Edge BioSciences",
         coords: [-37.7964, 144.9586],
-        link : "stops.html",
+        link : "web.html",
     }, 
     {
         name: 'Old Agriculutral Building',
         coords: [-37.79680,144.95863],
-        link: "stops.html",
+        link: "oab.html",
     }
 ]
 

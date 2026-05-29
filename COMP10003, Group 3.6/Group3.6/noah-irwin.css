@@ -61,7 +61,8 @@ header{
         height: 100%;
         display: flex;
         align-items: center;
-        padding: 0 2.25rem;
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
         transition: all 200ms ease-in-out;
 
         a{
