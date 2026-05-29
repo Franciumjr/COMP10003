@@ -153,6 +153,11 @@ const campusBuildings = [
         name: 'Old Agriculutral Building',
         coords: [-37.79680,144.95863],
         link: "oab.html",
+    },
+    {
+        name: 'Kwong Lee Dow',
+        coords: [-37.8040, 144.9608],
+        link: "kwongleedow.html",
     }
 ]
 
