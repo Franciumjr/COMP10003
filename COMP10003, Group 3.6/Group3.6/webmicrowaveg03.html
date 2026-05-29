@@ -73,8 +73,10 @@
             <section class="directions">
                 <h2>Directions</h2>
                 <p>Enter West Edge Biosciences (125) through ground floor <b>Eastern entrance</b>. Continue straight, and enter the first room to the left - Student Kitchenette (G03) is here.</p>
-                <button onclick="playAudio('assets/student_kitchenette_directions.mp3')">Play Audio</button>
-                <button onclick="stopAudio()">Stop Audio</button>
+                    <div class="audiocase">
+                        <button class="audio" onclick="playAudio('assets/student_kitchenette_directions.mp3')">Play Audio</button>
+                        <button class="audio" onclick="stopAudio()">Stop Audio</button>
+                    </div>
             </section>
 
             <div class="author-notes">
@@ -82,9 +84,11 @@
                     <h2>General Comments</h2>
                     <p>This newly established, hidden microwave area resides on the <b>ground floor</b> of West Edge Biosciences (125), providing ample indoor seating.</p>
                     <p>It provides an abundance of beautiful study areas, and is equipped with simple amenities including, <b>six microwaves</b>, and two vending machines, making it a <b>basic location</b> for heating food.</p>
-                    <button onclick="playAudio('assets/student_kitchenette_comment.mp3')">Play Audio</button>
-                    <button onclick="stopAudio()">Stop Audio</button>
                     <p><i>Not busy.</i></p>
+                        <div class="audiocase">
+                            <button class="audio" onclick="playAudio('assets/student_kitchenette_comment.mp3')">Play Audio</button>
+                            <button class="audio" onclick="stopAudio()">Stop Audio</button>
+                        </div>
                 </aside>
 
                 <aside class="rating">
@@ -117,7 +121,19 @@
         </div>
     </main>
 
-    <div class="footer-break"></div>
+    <div class="section-break"></div>
+
+    <footer class="acknowledgement">
+        <h3>Acknowledgement of Country</h3>
+        <div class="flags">
+            <img src="assets/aboriginal.png" alt="Aboriginal Flag">
+            <img src="assets/torresflag.jpg" alt="Torres Strait Islander Flag">
+        </div>
+        <p>We, MicroMelb, acknowledge Aboriginal and Torres Strait Islander people as the Traditional Owners of the
+            unceded lands on which we work, learn, live, and microwave. We pay respect to Elders past, present and
+            future, and acknowledge the importance of Indigenous knowledge in the Academy.</p>
+    </footer>    
+
      
     <footer>
         <img class="logo" src="assets/unimelb.png" alt="Logo">

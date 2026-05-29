@@ -49,8 +49,13 @@
             <div class="slideshow-container">
 
             <div class="mySlides fade">
-                <div class="numbertext">1 / 1</div>
+                <div class="numbertext">1 / 2</div>
                 <img src="assets/studentpav410.jpg">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 2</div>
+                <img src="assets/studentpav4101.jpg">
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -60,6 +65,7 @@
 
             <div style="position:absolute; bottom:12px; width:100%; text-align:center; z-index:10;">
                 <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
             </div>
         </section>
         
@@ -67,8 +73,10 @@
             <section class="directions">
                 <h2>Directions</h2>
                 <p>Enter Student Pavillion (162) through <b>Southern entrance</b>. Locate, and take the elevator (alternatively, the stairs are beside the elevator) to the <b>4th (top) floor</b>. Turn left, and take the first corridor to the left - Community Kitchen (410) is immediately in front.</p>
-                <button onclick="playAudio('assets/com_kitchen_410_directions.mp3')">Play Audio</button>
-                <button onclick="stopAudio()">Stop Audio</button>
+                    <div class="audiocase">
+                        <button class="audio" onclick="playAudio('assets/com_kitchen_410_directions.mp3')">Play Audio</button>
+                        <button class="audio" onclick="stopAudio()">Stop Audio</button>
+                    </div>
             </section>
 
             <div class="author-notes">
@@ -76,9 +84,11 @@
                     <h2>General Comments</h2>
                     <p>This microwave area resides on the <b>top floor</b> of the Student Pavillion (162), providing ample indoor seating areas.</p>
                     <p>It is well equipped with many amenities including, <b>one microwave</b>, two hot/cold taps and sinks, two ovens, two dishwashers, stovetop, benchside seating, and other kitchen applicanes, making it an <b>ideal location</b> for group lunch settings.</p>
-                    <button onclick="playAudio('assets/com_kitchen_410_comment.mp3')">Play Audio</button>
-                    <button onclick="stopAudio()">Stop Audio</button>
                     <p><i>Usually not busy.</i></p>
+                        <div class="audiocase">
+                            <button class="audio" onclick="playAudio('assets/com_kitchen_410_comment.mp3')">Play Audio</button>
+                            <button class="audio" onclick="stopAudio()">Stop Audio</button>
+                        </div>
                 </aside>
 
                 <aside class="rating">
@@ -111,7 +121,18 @@
         </div>
     </main>
 
-    <div class="footer-break"></div>
+    <div class="section-break"></div>
+
+    <footer class="acknowledgement">
+        <h3>Acknowledgement of Country</h3>
+        <div class="flags">
+            <img src="assets/aboriginal.png" alt="Aboriginal Flag">
+            <img src="assets/torresflag.jpg" alt="Torres Strait Islander Flag">
+        </div>
+        <p>We, MicroMelb, acknowledge Aboriginal and Torres Strait Islander people as the Traditional Owners of the
+            unceded lands on which we work, learn, live, and microwave. We pay respect to Elders past, present and
+            future, and acknowledge the importance of Indigenous knowledge in the Academy.</p>
+    </footer>
      
     <footer>
         <img class="logo" src="assets/unimelb.png" alt="Logo">
