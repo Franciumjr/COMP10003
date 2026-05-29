@@ -748,6 +748,7 @@ main.explanation {
         height: 32px;
         margin-right: 0.5rem;
         display: inline-block;
+        border: solid 0.5px #a4a4a4;
     }
 
     p {
