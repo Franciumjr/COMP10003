@@ -7,11 +7,16 @@
     box-sizing: border-box;
 }
 body {
-
     text-align: center;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../Images/magnusmain-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 
@@ -145,14 +150,16 @@ main {
     }
     
     .card-container {
-
         margin-top: 2rem;
         img {
             margin-top: 34px;
             object-fit: cover;
+            border-radius: 8px;
         }
         h2 {
             font-size: 36px;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
         width: 444px;
         display: flex;
@@ -161,9 +168,12 @@ main {
         align-items: center;
         gap: 20px;
         padding: 8rem 4rem;
-        background: #f4f4f4;
-        border: 1px solid #c0c0c0;
-        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         animation-name: slideUpAnimation;
         animation-duration: 0.7s;
         animation-delay: 0.2s;
@@ -171,22 +181,23 @@ main {
     }
     .card-container:nth-child(2) {
         animation-delay: 0.4s;
-
     }
     .card {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
-        
     }
     hr {
         width: 100%;
-        border-color: #000F46;
+        border: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
     button {
-        border: 1px solid #8087A2;
+        border: 1px solid rgba(255, 255, 255, 0.2);
         background-color:  #46C8F0;
+        color: #000F46;
+        font-weight: 600;
         padding: 1rem 2rem ;
         transition: all 0.3s ease;
         display: flex;
@@ -197,6 +208,7 @@ main {
     button:hover {
         background-color: #A3E4F7;
         cursor: pointer;
+        transform: scale(1.03);
     }
 
     footer{
