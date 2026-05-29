@@ -264,7 +264,7 @@ campusBuildings.forEach(bldg => {
             <div style="text-align: center;">
             <h3 style="margin: 0.5rem 0 0.5rem 0; font-family: 'Fraunces', serif; font-weight: 400; font-size: 1.15rem; color: #000F46;">${bldg.name}</h3>
             <hr style="border: 0; border-top: 1px solid #ddd; margin: 0.5rem 0;" />
-            <a style="display: flex; justify-content: center; align-items: center; gap: 8px; cursor: pointer; border-radius: 0px; border: none; padding: 0.5rem; background: #46C8F0;" target="_blank" href="./${bldg.link}">
+            <a style="display: flex; justify-content: center; align-items: center; gap: 8px; cursor: pointer; border-radius: 0px; border: none; padding: 0.5rem; background: #46C8F0;" target="_self" href="./${bldg.link}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 <button style="cursor: pointer; border: none; background: none; font-family: 'Source Sans 3', sans-serif; font-weight: bold; font-size: 0.95rem;">Visit</button>
             </a>

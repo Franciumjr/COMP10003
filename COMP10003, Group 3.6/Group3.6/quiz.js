@@ -18,32 +18,32 @@ var questions = [
         photo: "assets/web.jpeg",
         text: "How many microwaves are in the West Edge Biosciences Student Kitchenette?",
         options: ["2", "6", "10", "12"],
-        correct: 2,
+        correct: 1,
     },
     {
         building: "Old Agricultural Building",
         photo: "assets/oabquiz.jpeg",
         text: "What amenities are included with the Old Agricultural Building Kitchen (G62A)?",
         options: ["Two microwaves, multi-purpose bin area, hot/cold tap and sink, stove, and dishwasher", "Two microwaves, stove, hot/cold tap and sink, fridge, and dishwasher", "Two microwaves, hot/cold tap and sink", "Two microwaves, multi-purpose bin area, hot/cold tap and sink, and dishwasher"],
-        correct: 4,
+        correct: 3,
     },
     {
         building: "John Medley - East Tower",
         photo: "assets/jm_background.webp",
         text: "What colour is the microwave in the John Medley East Tower?",
         options: ["Silver", "Black", "Grey", "White" ],
-        correct: 4,
+        correct: 3,
     },
     {
         building: "John Medley - West Tower",
         photo: "assets/jm_westtower_micro_2.jpg",
         text: "On what level is the microwave in the John Medley West Tower?",
         options: ["1", "2", "3", "4"],
-        correct: 1,
+        correct: 0,
     },
     {
         building: "MSD Building",
-        photo: "assets/MSDlevel2.jpg",
+        photo: "assets/MSDlevel3.jpg",
         text: "After what time are MSD Level 3 and 4 microwaves restricted to most students?",
         options: ["4:00 PM", "5:00 PM", "6:00 PM", "8:00 PM"],
         correct: 2,
@@ -52,8 +52,8 @@ var questions = [
         building: "MSD Building",
         photo: "assets/MSDlevel2.jpg",
         text: "On Level 2 of the MSD building, which side of the building are the microwaves on?",
-        options: ["West side (back)", "North side", "East side (front)", "Centre atrium"],
-        correct: 2,
+        options: ["East side (front)", "West side (back)", "North side", "Centre atrium"],
+        correct: 0,
     },
     {
         building: "Student Pavillion",
@@ -74,11 +74,11 @@ var questions = [
         photo: "assets/lawbuilding-3.jpg",
         text: "Where is the Law Building Kitchnette?",
         options: ["Office Areas", "First Floor Lobby", "Level 3 Study Area", "Food Court Space"],
-        correct: 4,
+        correct: 3,
     },
     {
         building: "General Knowledge",
-        photo: "assets/kwongleedow-building.jpg",
+        photo: "assets/kwongleedow-building-2.jpg",
         text: "What overall rating did the 233 Bouverie kitchenette receive?",
         options: ["5.5/10", "6.4/10", "7.2/10", "8.0/10"],
         correct: 1,
@@ -98,7 +98,6 @@ function loadQuestion() {
 
     document.getElementById('buildingHeading').textContent = q.building;
     document.getElementById('buildingPhoto').src = q.photo;
-    document.getElementById('buildingCaption').textContent = q.caption;
     document.getElementById('counter').textContent = 'Question ' + (currentIdx + 1) + ' of ' + questions.length;
     document.getElementById('questionText').textContent = q.text;
     document.getElementById('feedbackText').textContent = '';
@@ -195,14 +194,17 @@ function showResult() {
         msg = 'Well done! You know your way around campus pretty well.';
     } else if (pct >= 40) {
         msg = 'Not bad! A few more microwave visits might help.';
+    } else if (pct >= 20) {
+        msg = 'You must be used to having cold food.';
+    } else if (pct === 0) {
+        msg = 'Do you even know what a microwave is?';
     } else {
         msg = 'Keep exploring! There is a lot to discover on campus.';
     }
     document.getElementById('resultMessage').textContent = msg;
 
     document.getElementById('buildingHeading').textContent = 'Quiz Complete!';
-    document.getElementById('buildingPhoto').src = 'assets/unimelb.png';
-    document.getElementById('buildingCaption').textContent = 'MicroQuiz';
+    document.getElementById('buildingPhoto').src = 'assets/quizlogo.png';
 }
 
 function restartQuiz() {
