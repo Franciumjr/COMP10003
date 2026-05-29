@@ -116,7 +116,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const campusBuildings = [
     {
         name: "Glynn Davis",
-        coords: [-37.7970, 144.9626],
+        coords: [-37.7973, 144.9627],
         link: "GlynDavis.html"
     },
     {
@@ -131,12 +131,12 @@ const campusBuildings = [
     },
     {
         name: "Student Pavilion",
-        coords: [-37.7987, 144.9634],
+        coords: [-37.79865, 144.9636],
         link: "studentpav.html"
     },
     {
         name: "John Medley - East Tower",
-        coords: [-37.79928, 144.9606],
+        coords: [-37.79929, 144.96088],
         link: "mfjohnmedleymicro_east.html"
     },
     {
@@ -158,8 +158,8 @@ const campusBuildings = [
 
 // boundaries around the map
 
-const southWest = L.latLng(-37.8050, 144.9500);
-const northEast = L.latLng(-37.790, 144.9750);
+const southWest = L.latLng(-37.8065, 144.9500);
+const northEast = L.latLng(-37.790, 144.9760);
 const bounds = L.latLngBounds(southWest, northEast);
 
 map.setMaxBounds(bounds);
@@ -217,29 +217,43 @@ campusBuildings.forEach(bldg => {
     enddropdown.append(endOption);
 });
 
-// Add an event listener to handle when a building is selected
 [startdropdown, enddropdown].forEach(dropdown => {
     dropdown.addEventListener('change', (event) => {
-    const selectedName = event.target.value;
-    const selectedBldg = campusBuildings.find(bldg => bldg.name === selectedName);
-    
-    if (selectedBldg) {
-        // zoom the map to the selected building
-        map.setView(selectedBldg.coords, 18);
-        clickedBldgs.push(selectedBldg.name);
+        const selectedName = event.target.value;
+        const selectedBldg = campusBuildings.find(bldg => bldg.name === selectedName);
 
-        console.log(clickedBldgs)
-        // Open the popup for the selected building if the marker is saved
-        if (selectedBldg.marker) {
-            selectedBldg.marker.openPopup();
+        if (selectedBldg) {
+            map.setView(selectedBldg.coords, 18);
+
+            campusBuildings.forEach(b => {
+                if (b.marker) b.marker.setIcon(blueIcon);
+            });
+
+            const startBldg = campusBuildings.find(b => b.name === startdropdown.value);
+            const endBldg = campusBuildings.find(b => b.name === enddropdown.value);
+            if (startBldg?.marker) startBldg.marker.setIcon(redIcon);
+            if (endBldg?.marker) endBldg.marker.setIcon(redIcon);
+
+            if (selectedBldg.marker) selectedBldg.marker.openPopup();
         }
-    }
-})});
-    
+    });
+});    
+function createIcon(color) {
+    return L.icon({
+        iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+}
+const blueIcon = createIcon('blue');
+const redIcon = createIcon('red');
 
 //map each buildings as building and render it as popup marks
 campusBuildings.forEach(bldg => { 
-    bldg.marker = L.marker(bldg.coords)
+    bldg.marker = L.marker(bldg.coords, { icon: blueIcon })
         .addTo(map)
         .bindPopup(`
             <div style="text-align: center;">
@@ -251,7 +265,14 @@ campusBuildings.forEach(bldg => {
             </a>
             </div>
         `);
-})
+
+    bldg.marker.on('click', () => {
+        campusBuildings.forEach(b => {
+            if (b.marker) b.marker.setIcon(blueIcon);
+        });
+        bldg.marker.setIcon(redIcon);
+    });
+});
 
 // DISTANCE CALCULATOR
 // ------------------------------------------------------------------
@@ -284,11 +305,11 @@ function calculateAndDisplay() {
     const resultBox = document.getElementById("distance-result");
 
     if (!startBldg || !endBldg) {
-        resultBox.innerHTML = "<p>Please select both a start and end building.</p>";
+        resultBox.innerHTML = "<p>Please select both a start and end location.</p>";
         return;
     }
     if (startBldg.name === endBldg.name) {
-        resultBox.innerHTML = "<p>Please select two different buildings.</p>";
+        resultBox.innerHTML = "<p>Please select two different locations.</p>";
         return;
     }
 
@@ -301,13 +322,13 @@ function calculateAndDisplay() {
     const fastMin = formatTime(Math.round(dist / 2.0));
 
     resultBox.innerHTML = `
-        <p><strong>Distance:</strong> ${distM}m (${distKm}km)</p>
-        <p><strong>Route:</strong> ${startBldg.name} → ${endBldg.name}</p>
+        <h3><strong>Distance:</strong> ${distM}m (${distKm}km)</h3>
+        <h4><strong>Route:</strong> ${startBldg.name} → ${endBldg.name}</h4>
         <table>
-            <tr><th>Pace</th><th>Speed</th><th>Time</th></tr>
-            <tr><td>Leisurely</td><td>3.2 km/h</td><td>${slowMin}</td></tr>
-            <tr><td>Average</td><td>5.0 km/h</td><td>${avgMin}</td></tr>
-            <tr><td>Brisk</td><td>7.2 km/h</td><td>${fastMin}</td></tr>
+            <tr><th>Pace</th><th>Speed</th><th></th><th>Time</th></tr>
+            <tr><td>Leisurely</td><td>3.2 km/h</td><td>→</td><td>${slowMin}</td></tr>
+            <tr><td>Average</td><td>5.0 km/h</td><td>→</td><td>${avgMin}</td></tr>
+            <tr><td>Brisk</td><td>7.2 km/h</td><td>→</td><td>${fastMin}</td></tr>
         </table>
     `;
 
