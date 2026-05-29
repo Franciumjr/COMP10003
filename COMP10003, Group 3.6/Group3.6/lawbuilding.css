@@ -153,6 +153,7 @@ main {
 }
 
 .wrapper {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -174,10 +175,15 @@ main {
 }
 
 
-.img-wrapper {
-    animation-name: slideUpAnimation;
-    animation-duration: 0.7s;
-    animation-delay: 0.4s;
+.carousel-wrapper {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.carousel {
+    display: flex;
+    aspect-ratio: 16/9;
 }
 
 .cards-wrapper {

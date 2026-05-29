@@ -89,6 +89,14 @@ a {
 }
 
 header {
+    .logo {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 2rem;
+        padding: 0.5rem 2rem;
+        width: 50rem;
+    }
     .vl {
         border-left: 1px solid white;
         height: 4rem;
@@ -98,12 +106,39 @@ header {
     margin-bottom: 0;
     color: white;
     background-color: #000F46;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: .5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    
     border-bottom: solid 1.5px #212e5d;
+    
+    .header-right {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        border-left: 1.5px solid #212e5d;
+    }
+
+    .header-empty {
+        border-bottom: 1.5px solid #212e5d;
+        background: #000b34;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 2rem;
+        
+        ul {
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+            
+            li {
+                list-style-type: none;
+            }
+        }
+    }
     
     a {
             color: white;
@@ -120,23 +155,11 @@ header {
         font-weight: 400;
     }
     
-    
     p {
         font-family: "Source Sans 3";
         font-weight: 300;
     }
-    
 }
-nav {
-       min-height: 100%;
-        border-left: 1.5px solid  #404B74;
-        ul {
-            li{
-                
-                list-style-type: none;
-            }
-        }
-    }
 main {
     background-color: white;
 
