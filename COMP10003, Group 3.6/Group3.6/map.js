@@ -61,42 +61,6 @@ window.addEventListener('scroll', () => {
 });
 
 
-// AUDIO CODE
-// ------------------------------------------------------------------
-
-/*let toggled = false
-const checkBox = document.getElementById("audio-toggle");
-const toggleText = document.getElementById("toggle-text");
-
-checkBox.addEventListener('change', (event) => {
-    if (event.target.checked) {
-        toggleText.innerText = "ON";
-    }
-    else {
-        toggleText.innerText = "OFF";
-    }
-})
-
-// function toggleAudio() {
-//     if (document.getElementById("audio-toggle").checked) {
-//         alert("Autoplay is on");
-//         localStorage.setItem("autoPlayVar", "true");
-//     } else {
-//         alert("Autoplay is off");
-//         localStorage.setItem("autoPlayVar", "false");
-//     }
-// }
-
-// function autoAudio(filename) {
-//     if (localStorage.getItem("autoPlayVar") == "true") {
-//         alert("Autoplay is on, playing audio");
-//         playAudio(filename);
-//     }
-}
-*/
-
-
-
 // MAP CODE
 // ------------------------------------------------------------------
 var map = L.map('interactive-map', {
