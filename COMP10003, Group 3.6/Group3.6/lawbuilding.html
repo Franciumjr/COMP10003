@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,8 @@
     <script src="micromelbaudio.js"></script>
 </head>
 <body>
-    <script src="path/to/chartjs/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <div class="header-break"></div>
     <header>
         <aside class="home-button">
@@ -30,24 +32,24 @@
 
         <aside class="name-group">
             <p>Seng Kuan Chan, 3.6
-            <br><span class="email-group">sengkuanchan@student.unimelb.edu.au</span>
+            <br><span class="email-group">sengkuanc@student.unimelb.edu.au</span>
             </p>
         </aside>
     </header>
     <main>
 
         <div class="container">
-            <div class="title">
-                <img width="40px" src="/assets//microwave-svgrepo-com.svg" alt="">
-                <h1>Kitchenette</h1>
+            <div class="title" style = "display: flex; column-gap: 10px; align-items: start;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chef-hat-icon lucide-chef-hat"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/></svg>
+                <h1>Kitchenette - Law Building</h1>
             </div>
 
             <div class="wrapper">
                 <div class="slider-wrapper">
                     <div class="slider">
-                        <img width="440px" height = "auto" id = "slide-1" src="../Images/Law Building-1.jpg" alt="Law Building Microwave (1)">
-                        <img width="440px" height = "auto" id = "slide-2" src="../Images/Law Building-2.jpg" alt="Law Building Microwave (2)">
-                        <img width="440px" height = "auto" id = "slide-3" src="../Images/Law Building-3.jpg" alt="Law Building Microwave (3)">
+                        <img width="552px" height = "auto" id = "slide-1" src="../Images/Law Building-1.jpg" alt="Law Building Microwave (1)">
+                        <img width="552px" height = "auto" id = "slide-2" src="../Images/Law Building-2.jpg" alt="Law Building Microwave (2)">
+                        <img width="552px" height = "auto" id = "slide-3" src="../Images/Law Building-3.jpg" alt="Law Building Microwave (3)">
                     </div>
                     <div class="slider-nav">
                         <a href="#slide-1"></a>
@@ -57,33 +59,69 @@
                 </div>
                 <div class="content-wrapper">
                     <div class="card-1">
-                        <h2>Directions</h2>
-                        <p>As you enter the food court space, the Kitchenette is on the left.</p>
-                        <button onclick="playAudio('assets/law_building_directions.mp3')">Play Audio</button>
-                        <button onclick="stopAudio()">Stop Audio</button>
+                        <div style = "display: flex; gap: 10px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-corner-down-right-icon lucide-corner-down-right"><path d="m15 10 5 5-5 5"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg>
+                            <h2>Directions</h2>
+                        </div>
+                        
+                        <p>Go up to the 1st floor of the Law Building (<b>not M</b>). Head towards the east side of the level. You should see a microwave area opposite of lecture theatre 0109. </p>
+                        <br>
+                        <p>Hot and Cold water are available. There are also 2 refrigerators to store your food.</p>
+                        <br>
+                        <button class="audio" onclick="playAudio('assets/law_building_directions.mp3')">Play Audio</button>
+                        <button class="audio" onclick="stopAudio()">Stop Audio</button>
                     </div>
-                    <div class="card-2">
-                        <h2>Rating</h2>
-
-
-                    </div>
+                    
                 </div>
             </div>
-            
+            <div class="rating-wrapper">
+                <div class="rating">
+                        <h1>Rating</h1>
+                        <div class="chart-container">
+                            <canvas id="myChart" data-scores="[7, 8, 8, 6, 8]"></canvas>
+                        </div>
+                </div>
+            </div>
             <h1 class="carousel-title">What students have to say about this place:</h1>
             <section class="carousel">
                 <div aria-hidden="true" class="group">
                     <div class="card">
                         <h3>Vardhan</h3>
-                        <p>This place is so cool!</p>
+                        <p>I bring my instant noodles to heat it here. 10/10</p>
                     </div>
                     <div class="card">
-                        <h3>Max Finch</h3>
-                        <p>I heat my meals here everyday.</p>
+                        <h3>Anonymous</h3>
+                        <p>I don't like that there is only 2 refrigerators. Wish there were more.</p>
                     </div>
                     <div class="card">
-                        <h3>Jintian</h3>
-                        <p>This place is so convenient. Love it!</p>
+                        <h3>Ivan</h3>
+                        <p>The microwaves are pretty clean. </p>
+                    </div>
+                    <div class="card">
+                        <h3>Rafi</h3>
+                        <p>I wish there is more microwavessss</p>
+                    </div>
+                    <div class="card">
+                        <h3>Quinn Mchshane</h3>
+                        <p>Never had to eat cold spaghetti again</p>
+                    </div>
+                    <div class="card">
+                        <h3>Noah</h3>
+                        <p>Microwave is clean asf. No crumbs or anything.</p>
+                    </div>
+                </div>
+<div aria-hidden="true" class="group">
+                    <div class="card">
+                        <h3>Vardhan</h3>
+                        <p>I bring my instant noodles to heat it here. 10/10</p>
+                    </div>
+                    <div class="card">
+                        <h3>Anonymous</h3>
+                        <p>I don't like that there is only 2 refrigerators. Wish there were more.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Ivan</h3>
+                        <p>The microwaves are pretty clean. </p>
                     </div>
                     <div class="card">
                         <h3>Rafi</h3>
@@ -102,42 +140,15 @@
                 <div aria-hidden="true" class="group">
                     <div class="card">
                         <h3>Vardhan</h3>
-                        <p>This place is so cool!</p>
+                        <p>I bring my instant noodles to heat it here. 10/10</p>
                     </div>
                     <div class="card">
-                        <h3>Max Finch</h3>
-                        <p>I heat my meals here everyday.</p>
+                        <h3>Anonymous</h3>
+                        <p>I don't like that there is only 2 refrigerators. Wish there were more.</p>
                     </div>
                     <div class="card">
-                        <h3>Jintian</h3>
-                        <p>This place is so convenient. Love it!</p>
-                    </div>
-                    <div class="card">
-                        <h3>Rafi</h3>
-                        <p>I wish there is more microwavessss</p>
-                    </div>
-                    <div class="card">
-                        <h3>Quinn Mchshane</h3>
-                        <p>Never had to eat cold spaghetti again</p>
-                    </div>
-                    <div class="card">
-                        <h3>Noah</h3>
-                        <p>Microwave is clean asf. No crumbs or anything.</p>
-                    </div>
-                </div>
-
-                <div aria-hidden="true" class="group">
-                    <div class="card">
-                        <h3>Vardhan</h3>
-                        <p>This place is so cool!</p>
-                    </div>
-                    <div class="card">
-                        <h3>Max Finch</h3>
-                        <p>I heat my meals here everyday.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Jintian</h3>
-                        <p>This place is so convenient. Love it!</p>
+                        <h3>Ivan</h3>
+                        <p>The microwaves are pretty clean. </p>
                     </div>
                     <div class="card">
                         <h3>Rafi</h3>
@@ -182,5 +193,6 @@
             <u>MicroMelb</u> © 2026. <i>All Rights Reserved.</i>
         </p>
     </footer>
+    <script src = "./graph.js"></script>
 </body>
 </html>

@@ -250,6 +250,27 @@ main {
     animation-delay: 0.6s;
 
 }
+.rating-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4vh 0;
+}
+
+.rating {
+    text-align: center;
+    width: 100%;
+}
+
+.chart-container {
+    position: relative;
+    width: 90vw;
+    max-width: 600px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+}
+
 .carousel-title {
     text-align: center;
     margin-top: 24vh;
