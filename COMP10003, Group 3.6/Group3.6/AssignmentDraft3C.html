@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Microwave Tour - MSD Stop</title>
     <style>
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
             padding: 0;
@@ -18,25 +20,65 @@
         header {
             position: sticky;
             top: 0;
-            height: 10vh; 
             width: 100%;
             z-index: 1000;
-            background-color: navy;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: #000F46;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: stretch;
+            border-bottom: solid 1.5px #212e5d;
         }
 
-        nav a {
+        .header-center {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .vl {
+            border-left: 1px solid white;
+            height: 4rem;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-family: serif;
+            font-weight: 300;
             color: white;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 1.8rem;
+        }
+
+        .brand p {
+            font-weight: 300;
+            color: white;
+            margin: 0;
+            font-style: italic;
+        }
+
+        .name-group {
+            text-align: right;
+            align-self: center;
+            padding-right: 2.5rem;
+        }
+
+        .name-group p {
+            color: #cdcdcd;
+            font-weight: 400;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .email-group {
+            font-size: 0.75rem;
+            font-style: italic;
         }
 
         main {
-            max-width: 1100px; 
-            margin: 0 auto;    
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 30px 20px;
         }
 
@@ -48,16 +90,16 @@
             display: flex;
             flex-direction: row;
             align-items: flex-start;
-            justify-content: center; 
-            gap: 60px;               
+            justify-content: center;
+            gap: 60px;
             margin-bottom: 30px;
-            flex-wrap: wrap;         
+            flex-wrap: wrap;
         }
 
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 35px; 
+            gap: 35px;
             width: fit-content;
         }
 
@@ -74,16 +116,16 @@
         }
 
         figure:hover {
-            transform: scale(1.5); 
-            box-shadow: 15px 15px 20px rgba(0,0,0,0.3);
+            transform: scale(1.5);
+            box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3);
             z-index: 10;
         }
 
         figure img {
-            width: 250px; 
-            height: 180px; 
-            object-fit: cover; 
-            display: block; 
+            width: 250px;
+            height: 180px;
+            object-fit: cover;
+            display: block;
             border-bottom: 2px solid black;
         }
 
@@ -145,8 +187,8 @@
         .access-section {
             display: flex;
             flex-direction: column;
-            align-items: center; 
-            text-align: left;    
+            align-items: center;
+            text-align: left;
         }
 
         .access-title {
@@ -166,6 +208,7 @@
             padding: 20px;
             border-left: 5px solid navy;
         }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -212,15 +255,25 @@
             z-index: 1001;
             border-radius: 4px;
         }
-
     </style>
 </head>
+
 <body>
 
     <header>
-        <nav>
-            <a href="#">Microwave oven #MSD</a>
-        </nav>
+        <div class="header-center">
+            <img width="80" src="assets/unimelb.png" alt="University of Melbourne Logo">
+            <div class="vl"></div>
+            <div class="brand">
+                <h1>MicroMelb</h1>
+                <p>Microwaves around Parkville campus</p>
+            </div>
+        </div>
+        <aside class="name-group">
+            <p>Mahmudul Hasan Rafi
+                <br><span class="email-group">mahmudulr@student.unimelb.edu.au</span>
+            </p>
+        </aside>
     </header>
 
     <main>
@@ -244,33 +297,58 @@
                 </div>
 
                 <ul class="rating-list">
-                    <li>Environment: 
+                    <li>Environment:
                         <select class="score">
-                            <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </li>
-                    <li>Functionality: 
+                    <li>Functionality:
                         <select class="score">
-                            <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </li>
-                    <li>Cleanliness: 
+                    <li>Cleanliness:
                         <select class="score">
-                            <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </li>
-                    <li>Interior: 
+                    <li>Interior:
                         <select class="score">
-                            <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </li>
-                    <li>Ease of Access: 
+                    <li>Ease of Access:
                         <select class="score">
-                            <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </li>
                     <li style="background-color: #eefaff;">
-                        Total: 
+                        Total:
                         <div>
                             <button class="calc-btn" onclick="calculateTotal()">=</button>
                             <span id="total-display" style="margin-left:10px;">__/25</span>
@@ -282,12 +360,18 @@
             <div class="access-section">
                 <p class="access-title">Ease of access:</p>
                 <p class="access-text">
-                    Go to the MSD building using any of the entrances, either the front or the back, and proceed to the second level (Level 2) by the stairs or the elevator. Once on Level 2, go to the east side of the building, which is the front side of the building. On the left-hand side there, you will find two microwave ovens.
-                    On the 3rd floor, the location of the microwave oven is the same, and on the 4th floor, it is also same as the second and third floor. However, for the 3rd and 4th floors, always go before 6:00 PM. This area is restricted and only a few students who have special access can use these ovens after regular tutorial classes end at 6:00 PM.
+                    Go to the MSD building using any of the entrances, either the front or the back, and proceed to the
+                    second level (Level 2) by the stairs or the elevator. Once on Level 2, go to the east side of the
+                    building, which is the front side of the building. On the left-hand side there, you will find two
+                    microwave ovens.
+                    On the 3rd floor, the location of the microwave oven is the same, and on the 4th floor, it is also
+                    same as the second and third floor. However, for the 3rd and 4th floors, always go before 6:00 PM.
+                    This area is restricted and only a few students who have special access can use these ovens after
+                    regular tutorial classes end at 6:00 PM.
                     The microwave oven on the <b>2nd</b> floor can be accessed anytime when the MSD building is open.
-                <br>
-                <button onclick="playAudio('assets/msd_directions.mp3')">Play Audio</button>
-                <button onclick="stopAudio()">Stop Audio</button>
+                    <br>
+                    <button onclick="playAudio('assets/msd_directions.mp3')">Play Audio</button>
+                    <button onclick="stopAudio()">Stop Audio</button>
                 </p>
             </div>
 
@@ -316,4 +400,5 @@
     <script src="micromelbaudio.js"></script>
 
 </body>
+
 </html>
