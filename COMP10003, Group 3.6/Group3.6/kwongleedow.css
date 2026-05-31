@@ -19,7 +19,7 @@ h2 {
     font-family: "Fraunces", serif;
     font-size: 24px;
     margin-bottom: 1rem;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 p {
@@ -250,19 +250,6 @@ main {
     animation-delay: 0.6s;
 
 }
-.audio {
-    font-size: 1em;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    background-color: #46c8f0;
-    color: black;
-    transition: all 200ms ease-in-out;
-    &:hover {
-        background-color:  #A3E4F7;
-    }
-}
 .rating-wrapper {
     width: 100%;
     display: flex;
@@ -278,8 +265,8 @@ main {
 
 .chart-container {
     position: relative;
-    width: 80vw;
-    max-width: 500px;
+    width: 90vw;
+    max-width: 600px;
     margin: 0 auto;
     aspect-ratio: 1;
 }
