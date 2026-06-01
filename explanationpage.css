@@ -166,7 +166,8 @@ main.explanation{
             h2{
                 color: #000e46;
                 font-size: 30px;
-                margin-bottom: 1rem;
+                text-align: center;
+                margin: .25rem;
             }
 
             img{
@@ -178,7 +179,7 @@ main.explanation{
         }
         
         .site-map {
-            flex: 0.6;
+            flex: 0.5;
         }
         
         .ref-list{
