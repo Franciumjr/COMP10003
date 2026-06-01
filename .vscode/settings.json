@@ -3,5 +3,7 @@
     "editor.inlineSuggest.enabled": false,
     "editor.suggest.showConstructors": false,
     "editor.suggest.showCustomcolors": false,
-    "editor.suggest.showFunctions": false
+    "editor.suggest.showFunctions": false,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showExpandedAbbreviation": "always"
 }

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .Overall{
+        font-weight: 600;
+        font-size: x-large;
+    }
+
+    body{   
+        justify-content: center;
+        margin: 0;
+        font-family: 'Fraunces';
+        background-image: url('assets/glyndavis.png');
+        backdrop-filter: blur(3px);
+        background-size: cover;
+        background-position: center;
+        }
+    
+    ul{
+        padding-left: 20px;
+    }
+
+    nav{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        color: white;
+        background-color: #000F46;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo{
+        width: 6%;
+        align-items: center;
+        justify-content: center;
+        padding-right: 2%;
+        padding-top: 1px;
+    }
+
+    .MainHeading{
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    div{
+        justify-content: center;
+        text-align: center;
+    }
+
+    div > p{
+        font-weight: 500;
+        text-align: center;
+        font-family: "Source Sans 3", sans-serif;
+    }
+
+
+
+    p{
+        font-family: "Source Sans 3", sans-serif;
+    }
+
+    .Directions{
+        font-family: "Source Sans 3", sans-serif;
+        font-size: small;
+        font-weight: 500;
+        text-align: left;
+        padding-bottom: 10%;
+    }
+    ul{
+        background-color: lightgrey;
+        font-family: "Source Sans 3", sans-serif;
+    }
+
+    li{
+        font-family: "Source Sans 3", sans-serif;
+    }
+
+    div.input > text{
+        font-weight: normal;
+        font-size: medium;
+    }
+
+    .card{
+        background-color: white;
+        border: 2px solid #000F46;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .cardRating{
+        background-color: white;
+        border: 2px solid #000F46;
+        padding: 10px;
+        margin: 10px;
+        padding-top: 10.3%;
+    }
+
+    .input{
+        text-align: left;
+        border: none;
+        padding: 10px;
+        margin: 10px;
+        padding-top: 10%;
+    }
+
+    footer{
+        display: flex;
+        background-color: #000F46;
+        color: white;
+        align-items: center;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .footerLogo{
+        width: 8%;
+        padding-right: 2%;
+    }
+
+    .footerText{
+        flex: 1;
+        text-align: center;
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 14px;
+    }
+
+    .text{
+        text-align: center;
+        background-color: white;
+        font-weight: 700;
+        font-size: medium;
+    }
+
+    .link{
+        color: white;
+    }
+
+</style>
+<script src="micromelbaudio.js"></script>
+</head>
+<body>
+    <nav>
+        <img src="assets/logo.png" alt="logo" class="logo"> </img>
+        <section>
+            <h1 class="MainHeading" style="text-align: center;">MicroMelb</h1>
+        </section>
+    </nav>
+
+    <section style="display: flex; align-items: flex-start;">
+        <div class="card">
+            <img src="./assets/kitchen.jpg" alt="photo1" width="300px">
+            <p>
+                Glyn Davis Building Level 2 Kitchenette
+                <ul>
+                <strong>Includes:</strong>
+                <li>2 microwaves</li>
+                <li>Boiling and cold water tap</li>
+                <li>Normal water tap</li>
+                <li>Toastie maker</li>
+                <li>Fridge</li>
+                <li>Paper towel</li>
+                </ul>
+            </p>
+            
+        </div>
+
+        <div class="cardRating">
+            <img src="./assets/KitchenetteRating.png" alt="rating" width="300px">
+            <p>Overall Rating:</p>
+            <p class="Overall">8.2/10</p>
+        </div>
+
+        <div class="inputDirections">
+            <div class="card">
+                <h1>Directions & Information</h1>
+                <p class="Directions">Upon entering the Glyn Davis Building proceed to the elevator, or take the stairs, to reach level 2.
+                From there, navigate to the Kitchenette by following the dedicated signage. These microwaves are a bit annoying to access... so it is only reccomended to use them if you are within the Glyn davis building.
+                </p>
+                <button onclick="playAudio('assets/glyn_davis_directions.mp3')">Play Audio</button>
+                <button onclick="stopAudio()">Stop Audio</button>
+            </div>
+            
+            <div class="input">
+            <p class="text">Leave a comment about this microwave!<p>
+            <textarea name="comment" rows="11" cols="71" placeholder="Leave your comment here..."></textarea> 
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <img src="logo.png" alt="University of Melbourne" class="footerLogo">
+        <div class="footerText">
+           <p><a class="link" href="index.html">MicroMelb</a> © 2026. <em>All Rights Reserved.</em></p>
+        </div>
+    </footer>
+
+</body>

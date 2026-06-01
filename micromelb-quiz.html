@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+
+    <link rel="stylesheet" href="./quiz.css">
+</head>
+
+<body>
+    <div class="header-break"></div>
+
+    <header>
+        <aside class="home-button">
+            <a href="index.html">HOME</a>
+        </aside>
+
+        <div>
+            <figure>
+                <img src="assets/unimelb.png" alt="Logo" width="104">
+            </figure>
+            <div class="brand">
+                <h1>MicroMelb</h1>
+                <i>
+                    <p>Microwaves around UOM Parkville campus</p>
+                </i>
+            </div>
+        </div>
+
+        <aside class="name-group">
+            <p>Group, 3.6
+                <br><span class="email-group">COMP10003</span>
+            </p>
+        </aside>
+    </header>
+
+    <nav class="quiz-title">
+        <h1>MicroQuiz</h1>
+        <p>How well do you <b>really</b> know MicroMelb?</p>
+    </nav>
+
+    <main>
+        <div class="quizCard" id="quizSection">
+
+            <div class="leftPanel">
+                <div id="questionScreen">
+                    <p class="counter" id="counter">Question 1 of 9</p>
+                    <h2 id="buildingHeading">Current Building</h2>
+                    <p class="questionText" id="questionText">Loading...</p>
+                    <ul id="optionsList"></ul>
+                    <p class="feedbackText" id="feedbackText"></p>
+                        <button class="actionBtn faded" id="actionBtn" onclick="handleAction()">SUBMIT</button>
+                </div>
+
+                <div id="resultScreen" style="display: none;">
+                    <p class="questionText">Quiz Complete!</p>
+                    <p class="counter" id="scoreText">You scored 0 out of 9</p>
+                    <p class="Overall" id="scorePercent">0%</p>
+                    <p class="feedbackText" id="resultMessage"></p>
+                    <button class="retryBtn" onclick="restartQuiz()">Try Again</button>
+                </div>
+            </div>
+
+            <div class="rightPanel">
+                <div class="progressBox">
+                    <p class="progressLabel" id="progressLabel">Question 1 of 9</p>
+                    <div class="progressBarTrack">
+                        <div class="progressBarFill" id="progressBarFill"></div>
+                    </div>
+                </div>
+
+                <div class="photoBox">
+                    <img id="buildingPhoto" src="assets/233photo.jpeg" alt="photo of building">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="section-break"></div>
+
+    <footer class="acknowledgement">
+        <h3>Acknowledgement of Country</h3>
+        <div class="flags">
+            <img src="assets/aboriginal.png" alt="Aboriginal Flag">
+            <img src="assets/torresflag.jpg" alt="Torres Strait Islander Flag">
+        </div>
+        <p>We, MicroMelb, acknowledge Aboriginal and Torres Strait Islander people as the Traditional Owners of the
+            unceded lands on which we work, learn, live, and microwave. We pay respect to Elders past, present and
+            future, and acknowledge the importance of Indigenous knowledge in the Academy.</p>
+    </footer>
+
+
+    <footer>
+        <aside class="logo">
+            <img src="assets/unimelb.png" alt="Logo">
+        </aside>
+
+        <p class="copywrite">
+            <u>MicroMelb</u> © 2026. <i>All Rights Reserved.</i>
+        </p>
+    </footer>
+
+    <script src="./quiz.js"></script>
+</body>
+</html>

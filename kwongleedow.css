@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+}
+
+h1 {
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: 36px;
+    background: none;
+    margin-bottom: 1rem;
+}
+h2 {
+    font-family: "Fraunces", serif;
+    font-size: 24px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+p {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    font-size: larger;
+}
+
+a {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: start;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 2em 0 2em;
+}
+.header-break {
+    height: 2vh;
+    background-color: #000b34;
+    border-bottom: solid 1.5px #212e5d;
+    width: 100%;
+}
+
+header {
+    
+    margin-bottom: 0;
+    color: white;
+    background-color: #000F46;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+    border-bottom: solid 1.5px #212e5d;
+
+    p {
+        font-weight: 200;
+        margin: 0;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    &>div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-self: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: .5rem 0; 
+    }
+
+    .vl {
+        border-left: 1px solid white;
+        height: 4rem;
+    }
+
+    .brand {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+
+        p {
+            font-family: 'Source Sans 3';
+            font-weight: 300;
+        }
+    }
+
+    .home-button {
+        gap: 1rem;
+        text-align: left;
+        justify-self: start;
+        background-color: #000b34;
+        border-right: solid 1.5px #212e5d;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 2.25rem;
+        transition: all 200ms ease-in-out;
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-family: "Source Sans 3", sans-serif;
+            font-size: 1rem;
+            &:hover {
+                color: #d4e5d2;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .name-group {
+       
+        text-align: right;
+        align-self: center;
+        padding-right: 2.5rem;
+
+        p {
+            font-family: "Source Sans 3";
+            color: #cdcdcd;
+            font-weight: 400;
+            font-size: 1rem;
+
+            .email-group {
+                font-size: .75rem;
+                font-style: italic;
+            }
+        }
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+}
+
+.title {
+    color: black;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    animation-name: slideUpAnimation;
+    animation-duration: 0.7s;
+    animation-delay: 0.4s;
+}
+
+
+.slider-wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 48rem;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 0.5rem;
+    scrollbar-width: none;
+}
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+.slider-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+}
+.slider-nav a {
+    display: inline-block;
+    width: .5rem;
+    height: .5rem;
+    background-color: #fff;
+    opacity: 0.7;
+    transition: opacity ease 250ms;
+    border-radius: 50%;
+    cursor: pointer;
+    scroll-snap-align: start;
+    
+}
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+.slider nav button {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    border: none;
+    background-color: #cdcdcd;
+    cursor: pointer;
+    scroll-snap-align: start;
+}
+
+.cards-wrapper {
+    display: flex;
+    gap: 20px;
+    padding: 8rem 4rem;
+    background-color: rgb(242, 242, 242);
+    border: 1px solid #c0c0c0;
+    border-radius: 8px;
+}
+
+.card-1,
+.card-2,
+.card3 {
+    animation-name: slideUpAnimation;
+    animation-duration: 0.7s;
+    animation-delay: 0.6s;
+
+}
+.rating-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4vh 0;
+}
+
+.rating {
+    text-align: center;
+    width: 100%;
+}
+
+.chart-container {
+    position: relative;
+    width: 90vw;
+    max-width: 600px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+}
+
+.carousel-title {
+    text-align: center;
+    margin-top: 24vh;
+}
+
+.carousel {
+    
+    margin-top: 6vh;
+    align-items: center;
+    display: flex;
+    gap: 1em;
+    overflow: hidden;
+
+    .group {
+        display: flex;
+        justify-content: center;
+        align-content: end;
+        text-align: center;
+        gap: 1em;
+        flex-shrink: 0;
+        animation: carouselSlide linear infinite 60s;
+    }
+
+    h3 {
+        font-family: "Source Sans 3", sans-serif;
+    }
+
+    .card {
+        border: 1px solid #a7a7a7;
+        border-radius: .7em;
+        background: #e9e9e9;
+        width: 15em;
+        height: 10em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        flex-shrink: 0;
+    }
+}
+
+
+.location {
+    margin: 24vh 0 18vh 0;
+    text-align: center;
+    width: 100vw;
+
+    iframe {
+        width: 80vw;
+        margin: 0 auto;
+        border-radius: ;
+    }
+}
+
+footer {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    background-color: #000F46;
+    border-top: solid 1.5px #212e5d;
+    display: grid;
+    grid-template-columns: 104px 1fr 104px;
+    align-items: center;
+    padding: var(--space-3) 20px var(--space-3) 0;
+
+    .logo {
+        border-right: solid 1.5px #212e5d;
+        padding: 0 0.5rem 0 0.5rem;
+        margin: 0;
+        height: 100%;
+        width: auto;
+        max-width: 104px;
+        object-fit: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        height: 100%;
+        width: auto;
+        max-width: 104px;
+        object-fit: cover;
+    }
+
+    .copywrite {
+        text-align: center;
+    }
+}
+
+.acknowledgement {
+    margin-bottom: 0;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    text-align: left;
+    gap: 0.5rem 3rem;
+    background-color: #3d4a6b;
+    color: white;
+    border: 1.5px solid #2b3347;
+    padding: 3rem 5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-left: 15rem;
+    padding-right: 10rem;
+
+    h3 {
+        overflow: hidden;
+        grid-column: 1;
+        grid-row: 1;
+        font-size: 1rem;
+        font-weight: 600;
+        font-size: large;
+        text-align: justify;
+        color: #ffffff;
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    img {
+        grid-column: 1;
+        grid-row: 2;
+        width: auto;
+        height: 32px;
+        margin-right: 0.5rem;
+        display: inline-block;
+        border: solid 0.5px #a4a4a4;
+    }
+
+    p {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        margin: 0;
+    }
+}
+
+/** Animation**/
+@keyframes slideUpAnimation {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes carouselSlide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - 1em));
+    }
+
+}
