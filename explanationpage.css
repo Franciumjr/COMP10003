@@ -177,6 +177,10 @@ main.explanation{
             }
         }
         
+        .site-map {
+            flex: 0.6;
+        }
+        
         .ref-list{
             h2{
                 margin-bottom: 1rem;
