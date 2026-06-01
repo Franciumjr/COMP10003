@@ -361,6 +361,16 @@ footer {
     .copywrite {
         text-align: center;
     }
+
+    .wordcount {
+        font-size: 14px;
+        padding-right: 2.5rem;
+        text-align: right;
+
+        .count {
+            color: #abc2a7;
+        }
+    }
 }
 
 .acknowledgement {
